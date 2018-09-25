@@ -1,0 +1,15 @@
+{
+  "name": "npm-doc-zh",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "update": "cp -r node_modules/npm/doc/* doc/"
+  },
+  "repository": "keqingrong/npm-doc-zh",
+  "keywords": [],
+  "author": "Qingrong Ke <keqingrong1992@gmail.com> (https://keqingrong.github.io/)",
+  "devDependencies": {
+    "npm": "6.4.1"
+  }
+}

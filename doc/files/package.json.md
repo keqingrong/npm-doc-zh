@@ -1,156 +1,180 @@
-package.json(5) -- Specifics of npm's package.json handling
+package.json(5) -- npm 的 package.json 处理细节
 ===========================================================
 
-## DESCRIPTION
+## 描述
 
-This document is all you need to know about what's required in your package.json
-file.  It must be actual JSON, not just a JavaScript object literal.
+本文档包含所有你需要知道的信息——package.json 文件需要什么。它必须是实际的 JSON，而不仅仅是
+JavaScript 对象字面量。
 
-A lot of the behavior described in this document is affected by the config
-settings described in `npm-config(7)`.
+`npm-config(7)` 中描述的配置设置会影响本文档中描述的许多行为。
 
-## name
+## name（名称）
 
-If you plan to publish your package, the *most* important things in your
-package.json are the name and version fields as they will be required. The name
-and version together form an identifier that is assumed to be completely unique.
-Changes to the package should come along with changes to the version. If you don't
-plan to publish your package, the name and version fields are optional.
+如果你计划发布你的包，package.json 中最重要的是要包含 name 和 version 字段（它们是必需的）。
+name 和 version 一起构成唯一标识符。更新包的时候应该连同版本一起修改。如果你不打算发布你的包，
+那么 name 和 version 字段都是可选的。
 
-The name is what your thing is called.
+name 是包的名称。
 
-Some rules:
+一些规则：
 
-* The name must be less than or equal to 214 characters. This includes the scope for
-  scoped packages.
-* The name can't start with a dot or an underscore.
-* New packages must not have uppercase letters in the name.
-* The name ends up being part of a URL, an argument on the command line, and a
-  folder name. Therefore, the name can't contain any non-URL-safe characters.
+* 名称必须少于或等于 214 个字符。包括 scoped package 中的 scope。
+* 名称不能以点或者下划线开头。
+* 新包的名称不能有大写字母（译者注：早前允许名称中包含大写字母）。
+* 名称最终会成为 URL 的一部分、命令行的参数，以及文件名。因此，名称不能包含任何非 URL 安全的字符。
 
-Some tips:
+（译者注：可以使用 [validate-npm-package-name](https://github.com/npm/validate-npm-package-name)
+ 检查包名是否合法。）
 
-* Don't use the same name as a core Node module.
-* Don't put "js" or "node" in the name.  It's assumed that it's js, since you're
-  writing a package.json file, and you can specify the engine using the "engines"
-  field.  (See below.)
-* The name will probably be passed as an argument to require(), so it should
-  be something short, but also reasonably descriptive.
-* You may want to check the npm registry to see if there's something by that name
-  already, before you get too attached to it. <https://www.npmjs.com/>
+一些建议：
 
-A name can be optionally prefixed by a scope, e.g. `@myorg/mypackage`. See
-`npm-scope(7)` for more detail.
+* 不要使用和 Node 核心模块相同的名称。
+* 不要将 "js" 或 "node" 加入到到名称中。由于你在编写的是 package.json 文件，所以假定它是 JS，
+  你可以使用 "engines" 字段指定引擎。（见下文）
+* 因为名称可能会被作为参数传入 `require()` 函数，所以它应该简短，而且要描述合理。
+* 在你使用喜欢的名称前，你可能希望检查 npm registry 查看是否已经存在该名称。
+  <https://www.npmjs.com/>
 
-## version
+名称前可以增加一个 scope 前缀，例如 `@myorg/mypackage`。更多细节见 `npm-scope(7)`。
 
-If you plan to publish your package, the *most* important things in your
-package.json are the name and version fields as they will be required. The name
-and version together form an identifier that is assumed to be completely unique.
-Changes to the package should come along with changes to the version. If you don't
-plan to publish your package, the name and version fields are optional.
+## version（版本）
 
-Version must be parseable by
-[node-semver](https://github.com/isaacs/node-semver), which is bundled
-with npm as a dependency.  (`npm install semver` to use it yourself.)
+如果你计划发布你的包，package.json 中最重要的是要包含 name 和 version 字段（它们是必需的）。
+name 和 version 一起构成唯一标识符。更新包的时候应该连同版本一起修改。如果你不打算发布你的包，
+那么 name 和 version 字段都是可选的。
 
-More on version numbers and ranges at semver(7).
+version 必须可以被 [node-semver](https://github.com/npm/node-semver) 解析，
+它作为依赖被打包在 npm 中。（你可以通过 `npm install semver` 安装使用。）
 
-## description
+更多版本号和版本范围的介绍见 semver(7)。
 
-Put a description in it.  It's a string.  This helps people discover your
-package, as it's listed in `npm search`.
+## description（描述）
 
-## keywords
+填写包的文字描述信息。字符串类型。这有助于人们发现你的包，描述会在 `npm search` 中列出。
 
-Put keywords in it.  It's an array of strings.  This helps people
-discover your package as it's listed in `npm search`.
+## keywords（关键词）
 
-## homepage
+填写包的关键词信息。字符串数组类型。这有助于人们发现你的包，关键词会在 `npm search` 中列出。
 
-The url to the project homepage.
+## homepage（主页）
 
-Example:
+项目主页的 URL。
 
-    "homepage": "https://github.com/owner/project#readme"
+示例：
 
-## bugs
+```json
+{
+  "homepage": "https://github.com/owner/project#readme"
+}
+```
 
-The url to your project's issue tracker and / or the email address to which
-issues should be reported. These are helpful for people who encounter issues
-with your package.
+## bugs（错误）
 
-It should look like this:
+url 对应项目的问题追踪系统网址，email 对应报告问题的邮件地址。这些对使用你的包遇到问题的人很有帮助。
 
-    { "url" : "https://github.com/owner/project/issues"
-    , "email" : "project@hostname.com"
+它应该像下面这样：
+
+```json
+{
+  "bugs": {
+    "url": "https://github.com/owner/project/issues",
+    "email": "project@hostname.com"
+  }
+}
+```
+
+你可以指定一个或两个值。如果你想只提供一个 URL，可以将 "bugs" 的值指定为一个字符串，来代替对象。
+
+如果提供了 "url"，`npm bugs` 命令会使用它。
+
+## license（许可证）
+
+你应该为你的包指定一个许可证，以便让人们知道他们的使用权利和你附加的限制。
+
+如果你正在使用的是像 BSD-2-Clause 或 MIT 这样的通用许可证，为其添加一个当前的 SPDX 许可证标识符，
+像这样：
+
+```json
+{
+  "license": "BSD-3-Clause"
+}
+```
+
+你可以检查 [完整的 SPDX 许可证标识符列表](https://spdx.org/licenses/)。
+
+理想的情况下，你应该选一个 [OSI](https://opensource.org/licenses/alphabetical)
+正式认可的许可证。
+
+如果你的包是在多个通用许可证下被许可的，使用 [SPDX 许可证表达式语法 2.0 版](https://www.npmjs.com/package/spdx) 字符串，像这样：
+
+```json
+{
+  "license": "(ISC OR GPL-3.0)"
+}
+```
+
+如果你正在使用还没有被分配 SPDX 标识符的许可证，或者自定义的许可证，使用像这样的字符串值：
+
+```json
+{
+  "license": "SEE LICENSE IN <filename>"
+}
+```
+
+然后在包的顶级目录下包含一个命名为 `<filename>` 的文件。
+
+一些旧的包使用 license 对象或者一个包含 license 对象数组的 "licenses" 属性：
+
+```json
+// 无效的元数据
+{
+  "license":
+  {
+    "type": "ISC",
+    "url": "https://opensource.org/licenses/ISC"
+  }
+}
+```
+
+```json
+// 无效的元数据
+{
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://www.opensource.org/licenses/mit-license.php"
+    },
+    {
+      "type": "Apache-2.0",
+      "url": "https://opensource.org/licenses/apache2.0.php"
     }
+  ]
+}
+```
 
-You can specify either one or both values. If you want to provide only a url,
-you can specify the value for "bugs" as a simple string instead of an object.
+这些风格现在已经被废弃了。取而代之的是使用 SPDX 表达式，像这样：
 
-If a url is provided, it will be used by the `npm bugs` command.
+```json
+{
+  "license": "ISC"
+}
+```
 
-## license
+```json
+{
+  "license": "(MIT OR Apache-2.0)"
+}
+```
 
-You should specify a license for your package so that people know how they are
-permitted to use it, and any restrictions you're placing on it.
+最后，如果你不希望授予其他人在任何条件下使用私有包或者未发布的包的权利：
 
-If you're using a common license such as BSD-2-Clause or MIT, add a
-current SPDX license identifier for the license you're using, like this:
+```json
+{
+  "license": "UNLICENSED"
+}
+```
 
-    { "license" : "BSD-3-Clause" }
-
-You can check [the full list of SPDX license IDs](https://spdx.org/licenses/).
-Ideally you should pick one that is
-[OSI](https://opensource.org/licenses/alphabetical) approved.
-
-If your package is licensed under multiple common licenses, use an [SPDX license
-expression syntax version 2.0 string](https://www.npmjs.com/package/spdx), like this:
-
-    { "license" : "(ISC OR GPL-3.0)" }
-
-If you are using a license that hasn't been assigned an SPDX identifier, or if
-you are using a custom license, use a string value like this one:
-
-    { "license" : "SEE LICENSE IN <filename>" }
-
-Then include a file named `<filename>` at the top level of the package.
-
-Some old packages used license objects or a "licenses" property containing an
-array of license objects:
-
-    // Not valid metadata
-    { "license" :
-      { "type" : "ISC"
-      , "url" : "https://opensource.org/licenses/ISC"
-      }
-    }
-
-    // Not valid metadata
-    { "licenses" :
-      [
-        { "type": "MIT"
-        , "url": "https://www.opensource.org/licenses/mit-license.php"
-        }
-      , { "type": "Apache-2.0"
-        , "url": "https://opensource.org/licenses/apache2.0.php"
-        }
-      ]
-    }
-
-Those styles are now deprecated. Instead, use SPDX expressions, like this:
-
-    { "license": "ISC" }
-
-    { "license": "(MIT OR Apache-2.0)" }
-
-Finally, if you do not wish to grant others the right to use a private or
-unpublished package under any terms:
-
-    { "license": "UNLICENSED" }
-
-Consider also setting `"private": true` to prevent accidental publication.
+也可以考虑设置 `"private": true` 避免意外发布。
 
 ## people fields: author, contributors
 

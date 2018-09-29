@@ -1,17 +1,17 @@
-npm-test(1) -- Test a package
+npm-test(1) -- 测试包
 =============================
 
-## SYNOPSIS
+## 概述
 
       npm test [-- <args>]
 
-      aliases: t, tst
+      别名: t, tst
 
-## DESCRIPTION
+## 描述
 
-This runs a package's "test" script, if one was provided.
+执行包的 "test" 脚本，如果包提供了的话。
 
-## SEE ALSO
+## 参见
 
 * npm-run-script(1)
 * npm-scripts(7)

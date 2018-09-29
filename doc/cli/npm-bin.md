@@ -1,15 +1,15 @@
-npm-bin(1) -- Display npm bin folder
+npm-bin(1) -- 显示 npm bin 文件夹
 ====================================
 
-## SYNOPSIS
+## 概述
 
     npm bin [-g|--global]
 
-## DESCRIPTION
+## 描述
 
-Print the folder where npm will install executables.
+打印 npm 会安装可执行文件的文件夹。
 
-## SEE ALSO
+## 参见
 
 * npm-prefix(1)
 * npm-root(1)

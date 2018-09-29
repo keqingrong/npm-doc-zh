@@ -1,15 +1,15 @@
-npm-whoami(1) -- Display npm username
+npm-whoami(1) -- 显示 npm 用户名
 =====================================
 
-## SYNOPSIS
+## 概述
 
     npm whoami [--registry <registry>]
 
-## DESCRIPTION
+## 描述
 
-Print the `username` config to standard output.
+打印 `username` 配置到标准输出。
 
-## SEE ALSO
+## 参见
 
 * npm-config(1)
 * npm-config(7)

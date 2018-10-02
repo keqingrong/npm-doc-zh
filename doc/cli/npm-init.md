@@ -4,8 +4,8 @@ npm-init(1) -- 创建 package.json 文件
 ## 概述
 
     npm init [--force|-f|--yes|-y|--scope]
-    npm init <@scope> (same as `npx <@scope>/create`)
-    npm init [<@scope>/]<name> (same as `npx [<@scope>/]create-<name>`)
+    npm init <@scope> (等同于 `npx <@scope>/create`)
+    npm init [<@scope>/]<name> (等同于 `npx [<@scope>/]create-<name>`)
 
 ## 示例
 
@@ -16,7 +16,7 @@ npm-init(1) -- 创建 package.json 文件
 $ npm init react-app ./my-react-app
 ```
 
-使用 [`create-esm`](https://npm.im/create-esm) 创建一个ESM 兼容的新包：
+使用 [`create-esm`](https://npm.im/create-esm) 创建一个 ESM 兼容的新包：
 
 ```sh
 $ mkdir my-esm-lib && cd my-esm-lib
@@ -56,7 +56,7 @@ $ npm init -y
 
 如果省略了初始化器（只调用 `npm init`），init 将会回退到遗留的初始化行为。它将会问你一些问题，
 然后写入 package.json 文件。它会尝试基于已存在的字段、依赖和选中的选项做出合理猜测。
-它是严格附加的，所以会保留任何已经设置过的字段和值。你也完全可以使用 `-y`/`--yes` 跳过问卷。
+它是严格附加的，所以会保留任何已经设置过的字段和值。你也完全可以使用 `-y`/`--yes` 跳过问卷调查。
 如果你传了 `--scope`，它将会创建限定范围的包（scoped package）。
 
 ## 参见

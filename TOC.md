@@ -21,7 +21,7 @@
 │   ├── npm-docs.md
 │   ├── npm-doctor.md
 │   ├── npm-edit.md
-│   ├── npm-explore.md
+│   ├── npm-explore.md # completed
 │   ├── npm-help.md
 │   ├── npm-help-search.md
 │   ├── npm-hook.md

@@ -7,11 +7,12 @@ npm-explore(1) -- 浏览安装过的包
 
 ## 描述
 
-在指定的已安装的包目录下创建一个子 shell 。
+在指定的已安装的包目录下创建（spawn）一个子 shell 。
 
 如果指定了 command，它会在子 shell 中执行，然后立即终止。
 
-这在 `node_modules` 文件夹中有 git 子模块的情况下特别有用。
+这在 `node_modules` 文件夹中有 [git 子模块](https://git-scm.com/docs/git-submodule)
+的情况下特别有用。
 
 ```sh
 npm explore some-dependency -- git pull origin master

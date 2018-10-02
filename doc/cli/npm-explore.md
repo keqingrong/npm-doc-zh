@@ -18,7 +18,7 @@ npm-explore(1) -- 浏览安装过的包
 npm explore some-dependency -- git pull origin master
 ```
 
-注意，包不会自动向后重新构建，所以如果你做了任何更改一定要使用 `npm rebuild <pkg>`。
+注意，包不会自动向后重新构建，所以如果你做了任何更改一定要使用 `npm rebuild <pkg>` 重新构建。
 
 ## 配置
 

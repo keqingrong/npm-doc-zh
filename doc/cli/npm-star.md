@@ -1,21 +1,20 @@
-npm-star(1) -- Mark your favorite packages
+npm-star(1) -- 标记你喜欢的包
 ==========================================
 
-## SYNOPSIS
+## 概述
 
     npm star [<pkg>...]
     npm unstar [<pkg>...]
 
-## DESCRIPTION
+## 描述
 
-"Starring" a package means that you have some interest in it.  It's
-a vaguely positive way to show that you care.
+给一个包“标记星号”意味着你对它感兴趣。这是一种积极的方式，显示你在关注它。
 
-"Unstarring" is the same thing, but in reverse.
+“取消星号”同样如此，但是正好相反。
 
-It's a boolean thing.  Starring repeatedly has no additional effect.
+它是一个布尔类型的值，反复标记星号没有额外效果。
 
-## SEE ALSO
+## 参见
 
 * npm-view(1)
 * npm-whoami(1)

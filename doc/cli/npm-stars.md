@@ -1,19 +1,17 @@
-npm-stars(1) -- View packages marked as favorites
+npm-stars(1) -- 查看被标记为喜欢的包
 =================================================
 
-## SYNOPSIS
+## 概述
 
     npm stars [<user>]
 
-## DESCRIPTION
+## 描述
 
-If you have starred a lot of neat things and want to find them again
-quickly this command lets you do just that.
+如果你已经给许多包标记星号，并且想要再次快速地找到它们，本命令可以让你做到这一点。
 
-You may also want to see your friend's favorite packages, in this case
-you will most certainly enjoy this command.
+你可能也想看看你朋友喜欢的包，这种情况下，你肯定会喜欢本命令。
 
-## SEE ALSO
+## 参见
 
 * npm-star(1)
 * npm-view(1)

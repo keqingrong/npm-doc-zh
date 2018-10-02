@@ -1,319 +1,319 @@
-npm-index(7) -- Index of all npm documentation
+npm-index(7) -- 所有 npm 文档的索引
 ==============================================
 
 ### README(1)
 
-a JavaScript package manager
+JavaScript 包管理器
 
-## Command Line Documentation
+## Command Line Documentation（命令行文档）
 
-Using npm on the command line
+在命令行中使用 npm
 
 ### npm(1)
 
-javascript package manager
+JavaScript 包管理器
 
 ### npm-access(1)
 
-Set access level on published packages
+设置已发布的包的访问级别
 
 ### npm-adduser(1)
 
-Add a registry user account
+增加一个注册用户账号
 
 ### npm-audit(1)
 
-Run a security audit
+运行安全审计
 
 ### npm-bin(1)
 
-Display npm bin folder
+显示 npm bin 目录
 
 ### npm-bugs(1)
 
-Bugs for a package in a web browser maybe
+在 Web 浏览器中打开包的 bugs 追踪页面
 
 ### npm-build(1)
 
-Build a package
+构建包
 
 ### npm-bundle(1)
 
-REMOVED
+已移除
 
 ### npm-cache(1)
 
-Manipulates packages cache
+操作包缓存
 
 ### npm-ci(1)
 
-Install a project with a clean slate
+从零开始安装项目
 
 ### npm-completion(1)
 
-Tab Completion for npm
+npm Tab 补全
 
 ### npm-config(1)
 
-Manage the npm configuration files
+管理 npm 配置文件
 
 ### npm-dedupe(1)
 
-Reduce duplication
+减少重复
 
 ### npm-deprecate(1)
 
-Deprecate a version of a package
+将包的某个版本标记为已废弃
 
 ### npm-dist-tag(1)
 
-Modify package distribution tags
+修改包的发行标记
 
 ### npm-docs(1)
 
-Docs for a package in a web browser maybe
+在 Web 浏览器中打开包的文档页面
 
 ### npm-doctor(1)
 
-Check your environments
+检查你的环境
 
 ### npm-edit(1)
 
-Edit an installed package
+编辑安装过的包
 
 ### npm-explore(1)
 
-Browse an installed package
+浏览安装过的包
 
 ### npm-help-search(1)
 
-Search npm help documentation
+搜索 npm 帮助文档
 
 ### npm-help(1)
 
-Get help on npm
+获取 npm 帮助
 
 ### npm-hook(1)
 
-Manage registry hooks
+管理 registry 钩子
 
 ### npm-init(1)
 
-create a package.json file
+创建 package.json 文件
 
 ### npm-install-ci-test(1)
 
-Install a project with a clean slate and run tests
+从零开始安装项目，并运行测试
 
 ### npm-install-test(1)
 
-Install package(s) and run tests
+安装包，并运行测试
 
 ### npm-install(1)
 
-Install a package
+安装包
 
 ### npm-link(1)
 
-Symlink a package folder
+创建指向包文件夹的符号链接
 
 ### npm-logout(1)
 
-Log out of the registry
+退出 registry
 
 ### npm-ls(1)
 
-List installed packages
+列出已安装的包
 
 ### npm-outdated(1)
 
-Check for outdated packages
+检查过时的包
 
 ### npm-owner(1)
 
-Manage package owners
+管理包的所有者
 
 ### npm-pack(1)
 
-Create a tarball from a package
+创建包的 tarball 文件
 
 ### npm-ping(1)
 
-Ping npm registry
+检测 npm registry
 
 ### npm-prefix(1)
 
-Display prefix
+显示前缀
 
 ### npm-profile(1)
 
-Change settings on your registry profile
+改变你的 registry 配置文件设置
 
 ### npm-prune(1)
 
-Remove extraneous packages
+移除无关的包
 
 ### npm-publish(1)
 
-Publish a package
+发布包
 
 ### npm-rebuild(1)
 
-Rebuild a package
+重新构建包
 
 ### npm-repo(1)
 
-Open package repository page in the browser
+在浏览器中打开包的仓库页面
 
 ### npm-restart(1)
 
-Restart a package
+重新启动包（译者注：重新运行 start 等一系列 npm 脚本）
 
 ### npm-root(1)
 
-Display npm root
+显示 npm 根目录（译者注：即 `node_modules`）
 
 ### npm-run-script(1)
 
-Run arbitrary package scripts
+运行包中的脚本
 
 ### npm-search(1)
 
-Search for packages
+搜索包
 
 ### npm-shrinkwrap(1)
 
-Lock down dependency versions for publication
+为发布锁定依赖版本
 
 ### npm-star(1)
 
-Mark your favorite packages
+标记你喜欢的包
 
 ### npm-stars(1)
 
-View packages marked as favorites
+查看被标记为喜欢的包
 
 ### npm-start(1)
 
-Start a package
+启动包（译者注：运行 start 脚本）
 
 ### npm-stop(1)
 
-Stop a package
+停止包（译者注：运行 stop 脚本）
 
 ### npm-team(1)
 
-Manage organization teams and team memberships
+管理组织团队和团队成员
 
 ### npm-test(1)
 
-Test a package
+测试包（译者注：运行 test 脚本）
 
 ### npm-token(1)
 
-Manage your authentication tokens
+管理你的身份验证令牌
 
 ### npm-uninstall(1)
 
-Remove a package
+移除包
 
 ### npm-unpublish(1)
 
-Remove a package from the registry
+从 registry 上移除包
 
 ### npm-update(1)
 
-Update a package
+更新包
 
 ### npm-version(1)
 
-Bump a package version
+升级包版本
 
 ### npm-view(1)
 
-View registry info
+查看 registry 信息
 
 ### npm-whoami(1)
 
-Display npm username
+显示 npm 用户名
 
-## API Documentation
+## API Documentation（API 文档）
 
-Using npm in your Node programs
+在你的 Node 程序中使用 npm
 
 ## Files
 
-File system structures npm uses
+npm 使用的文件系统结构
 
 ### npm-folders(5)
 
-Folder Structures Used by npm
+npm 使用的文件夹结构
 
 ### npm-package-locks(5)
 
-An explanation of npm lockfiles
+npm 锁文件说明
 
 ### npm-shrinkwrap.json(5)
 
-A publishable lockfile
+可发布的锁文件
 
 ### npmrc(5)
 
-The npm config files
+npm 配置文件
 
 ### package-lock.json(5)
 
-A manifestation of the manifest
+清单
 
 ### package.json(5)
 
-Specifics of npm's package.json handling
+npm 的 package.json 处理细节
 
-## Misc
+## Misc（杂项）
 
-Various other bits and bobs
+各种其他零碎的东西
 
 ### npm-coding-style(7)
 
-npm's "funny" coding style
+npm “有趣”的编码风格
 
 ### npm-config(7)
 
-More than you probably want to know about npm configuration
+更多你可能想要知道的 npm 配置
 
 ### npm-developers(7)
 
-Developer Guide
+开发者指南
 
 ### npm-disputes(7)
 
-Handling Module Name Disputes
+处理模块名争论
 
 ### npm-index(7)
 
-Index of all npm documentation
+所有 npm 文档的索引
 
 ### npm-orgs(7)
 
-Working with Teams & Orgs
+和团队与组织合作
 
 ### npm-registry(7)
 
-The JavaScript Package Registry
+JavaScript 包的 registry
 
 ### npm-scope(7)
 
-Scoped packages
+限定范围的包（scoped package）
 
 ### npm-scripts(7)
 
-How npm handles the "scripts" field
+npm 如何处理 "scripts" 字段
 
 ### removing-npm(7)
 
-Cleaning the Slate
+了结往事（译者注：即移除 npm）
 
 ### semver(7)
 
-The semantic versioner for npm
+npm 使用的语义化版本
 

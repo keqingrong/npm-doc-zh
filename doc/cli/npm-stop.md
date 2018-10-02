@@ -1,15 +1,15 @@
-npm-stop(1) -- Stop a package
+npm-stop(1) -- 停止包
 =============================
 
-## SYNOPSIS
+## 概述
 
     npm stop [-- <args>]
 
-## DESCRIPTION
+## 描述
 
-This runs a package's "stop" script, if one was provided.
+执行包的 "stop" 脚本，如果包提供了的话。
 
-## SEE ALSO
+## 参见
 
 * npm-run-script(1)
 * npm-scripts(7)

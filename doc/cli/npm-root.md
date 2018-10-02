@@ -1,15 +1,15 @@
-npm-root(1) -- Display npm root
+npm-root(1) -- 显示 npm 根目录
 ===============================
 
-## SYNOPSIS
+## 概述
 
     npm root [-g]
 
-## DESCRIPTION
+## 描述
 
-Print the effective `node_modules` folder to standard out.
+打印有效的 `node_modules` 文件夹到标准输出。
 
-## SEE ALSO
+## 参见
 
 * npm-prefix(1)
 * npm-bin(1)

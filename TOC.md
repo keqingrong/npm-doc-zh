@@ -25,7 +25,7 @@
 │   ├── npm-help.md
 │   ├── npm-help-search.md
 │   ├── npm-hook.md
-│   ├── npm-init.md
+│   ├── npm-init.md # completed
 │   ├── npm-install.md
 │   ├── npm-install-ci-test.md
 │   ├── npm-install-test.md

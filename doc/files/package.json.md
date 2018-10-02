@@ -18,12 +18,13 @@ name 是包的名称。
 
 一些规则：
 
-* 名称必须少于或等于 214 个字符。包括 scoped package 中的 scope。
+* 名称必须少于或等于 214 个字符。包括限定范围的包（scoped package）中的范围（scope）。
 * 名称不能以点或者下划线开头。
 * 新包的名称不能有大写字母（译者注：早前允许名称中包含大写字母）。
 * 名称最终会成为 URL 的一部分、命令行的参数，以及文件名。因此，名称不能包含任何非 URL 安全的字符。
 
-（译者注：可以使用 [validate-npm-package-name](https://github.com/npm/validate-npm-package-name)
+（译者注：可以使用
+[validate-npm-package-name](https://github.com/npm/validate-npm-package-name)
  检查包名是否合法。）
 
 一些建议：
@@ -32,10 +33,10 @@ name 是包的名称。
 * 不要将 "js" 或 "node" 加入到到名称中。由于你在编写的是 package.json 文件，所以假定它是 JS，
   你可以使用 "engines" 字段指定引擎。（见下文）
 * 因为名称可能会被作为参数传入 `require()` 函数，所以它应该简短，而且要描述合理。
-* 在你使用喜欢的名称前，你可能希望检查 npm registry 查看是否已经存在该名称。
-  <https://www.npmjs.com/>
+* 在你使用喜欢的名称前，最好先检查 [npm registry](https://www.npmjs.com/)
+  查看是否已经存在该名称。
 
-名称前可以增加一个 scope 前缀，例如 `@myorg/mypackage`。更多细节见 `npm-scope(7)`。
+名称前可以增加一个范围前缀，例如 `@myorg/mypackage`。更多细节见 `npm-scope(7)`。
 
 ## version（版本）
 
@@ -70,7 +71,7 @@ version 必须可以被 [node-semver](https://github.com/npm/node-semver) 解析
 
 ## bugs（错误）
 
-url 对应项目的问题追踪系统网址，email 对应报告问题的邮件地址。这些对使用你的包遇到问题的人很有帮助。
+url 是项目的问题追踪系统网址，email 是报告问题的邮件地址。这些对使用你的包遇到问题的人很有帮助。
 
 它应该像下面这样：
 
@@ -91,7 +92,7 @@ url 对应项目的问题追踪系统网址，email 对应报告问题的邮件�
 
 你应该为你的包指定一个许可证，以便让人们知道他们的使用权利和你附加的限制。
 
-如果你正在使用的是像 BSD-2-Clause 或 MIT 这样的通用许可证，为其添加一个当前的 SPDX 许可证标识符，
+如果你正在使用像 BSD-2-Clause 或 MIT 这样的通用许可证，为其添加一个当前的 SPDX 许可证标识符，
 像这样：
 
 ```json
@@ -105,7 +106,8 @@ url 对应项目的问题追踪系统网址，email 对应报告问题的邮件�
 理想的情况下，你应该选一个 [OSI](https://opensource.org/licenses/alphabetical)
 正式认可的许可证。
 
-如果你的包是在多个通用许可证下被许可的，使用 [SPDX 许可证表达式语法 2.0 版](https://www.npmjs.com/package/spdx) 字符串，像这样：
+如果你的包是在多个通用许可证下被许可的，使用
+[SPDX 许可证表达式语法 2.0 版](https://www.npmjs.com/package/spdx) 字符串，像这样：
 
 ```json
 {
@@ -176,25 +178,32 @@ url 对应项目的问题追踪系统网址，email 对应报告问题的邮件�
 
 也可以考虑设置 `"private": true` 避免意外发布。
 
-## people fields: author, contributors
+## people fields: author, contributors（和人有关的字段：作者，贡献者）
 
-The "author" is one person.  "contributors" is an array of people.  A "person"
-is an object with a "name" field and optionally "url" and "email", like this:
+"author" 是一个人，"contributors" 是一个 "person" 数组。"persion" 是一个对象，包含
+"name" 字段和可选的 "url"、"email" 字段，像这样：
 
-    { "name" : "Barney Rubble"
-    , "email" : "b@rubble.com"
-    , "url" : "http://barnyrubble.tumblr.com/"
-    }
+```json
+{
+  "name": "Barney Rubble",
+  "email": "b@rubble.com",
+  "url": "http://barnyrubble.tumblr.com/"
+}
+```
 
-Or you can shorten that all into a single string, and npm will parse it for you:
+或者你可以把它们缩短成一个字符串，npm 会帮你解析：
 
-    "Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)"
+```json
+"Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)"
+```
 
-Both email and url are optional either way.
+无论哪种方式，email 和 url 都是可选的。
 
-npm also sets a top-level "maintainers" field with your npm user info.
+npm 也会使用你的 npm 用户信息来设置一个顶级的 "maintainers" 字段。
 
-## files
+## files（文件）
+
+`files` 字段是一个可选的文件模式数组，
 
 The optional `files` field is an array of file patterns that describes
 the entries to be included when your package is installed as a

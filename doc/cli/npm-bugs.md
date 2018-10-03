@@ -1,37 +1,34 @@
-npm-bugs(1) -- Bugs for a package in a web browser maybe
+npm-bugs(1) -- 在 Web 浏览器中打开包的 bugs 追踪页面
 ========================================================
 
-## SYNOPSIS
+## 概述
 
     npm bugs [<pkgname>]
 
-    aliases: issues
+    别名: issues
 
-## DESCRIPTION
+## 描述
 
-This command tries to guess at the likely location of a package's
-bug tracker URL, and then tries to open it using the `--browser`
-config param. If no package name is provided, it will search for
-a `package.json` in the current folder and use the `name` property.
+本命令尝试猜测包的 bug 追踪页面 URL 地址，然后尝试使用 `--browser` 配置参数打开。
+如果没有提供包名，它会在当前文件夹中搜索 `package.json`，使用 `name` 属性。
 
-## CONFIGURATION
+## 配置
 
 ### browser
 
-* Default: OS X: `"open"`, Windows: `"start"`, Others: `"xdg-open"`
-* Type: String
+* 默认值: OS X: `"open"`, Windows: `"start"`, 其他系统: `"xdg-open"`
+* 类型: 字符串
 
-The browser that is called by the `npm bugs` command to open websites.
+浏览器，被 `npm bugs` 命令调用，用于打开网站。
 
 ### registry
 
-* Default: https://registry.npmjs.org/
-* Type: url
+* 默认值: `https://registry.npmjs.org/`
+* 类型: url
 
-The base URL of the npm package registry.
+npm 包 registry 的基础 URL。
 
-
-## SEE ALSO
+## 参见
 
 * npm-docs(1)
 * npm-view(1)

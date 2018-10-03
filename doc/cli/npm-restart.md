@@ -1,16 +1,16 @@
-npm-restart(1) -- Restart a package
+npm-restart(1) -- 重新启动包
 ===================================
 
-## SYNOPSIS
+## 概述
 
     npm restart [-- <args>]
 
-## DESCRIPTION
+## 描述
 
-This restarts a package.
+本命令重新启动一个包。
 
-This runs a package's "stop", "restart", and "start" scripts, and associated
-pre- and post- scripts, in the order given below:
+本命令运行包的 `"stop"`、`"restart"`、`"start"` 脚本，以及相关的 `pre-` 和 `post-`
+脚本，按照以下给的顺序：
 
 1. prerestart
 2. prestop
@@ -22,15 +22,13 @@ pre- and post- scripts, in the order given below:
 8. poststart
 9. postrestart
 
-## NOTE
+## 注意
 
-Note that the "restart" script is run **in addition to** the "stop"
-and "start" scripts, not instead of them.
+注意，除了 `"stop"` 和 `"start"` 脚本之外，还会运行 `"restart"` 脚本，但不会取代它们。
 
-This is the behavior as of `npm` major version 2.  A change in this
-behavior will be accompanied by an increase in major version number
+这是 `npm` 主版本 2.0 的行为。随着主版本号的增长，这种行为将会变化。
 
-## SEE ALSO
+## 参见
 
 * npm-run-script(1)
 * npm-scripts(7)

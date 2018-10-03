@@ -15,9 +15,9 @@ npm-config(1) -- 管理 npm 配置文件
 
 ## 描述
 
-npm 会从命令行，环境变量，`npmrc` 文件，（某些情况下）`package.json` 文件获取配置设置。
+npm 会从命令行、环境变量、`npmrc` 文件、（某些情况下包括）`package.json` 文件获取配置设置。
 
-关于 npmrc 文件的更多信息参见 `npmrc(5)`。
+关于 `npmrc` 文件的更多信息参见 `npmrc(5)`。
 
 对有关机制更全面的讨论参见 `npm-config(7)`。
 

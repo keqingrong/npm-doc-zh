@@ -1,34 +1,31 @@
-npm-help-search(1) -- Search npm help documentation
+npm-help-search(1) -- 搜索 npm 帮助文档
 ===================================================
 
-## SYNOPSIS
+## 概述
 
     npm help-search <text>
 
-## DESCRIPTION
+## 描述
 
-This command will search the npm markdown documentation files for the
-terms provided, and then list the results, sorted by relevance.
+本命令会搜索 npm markdown 文档文件，查找提供的术语，然后列出结果，按相关性排序。
 
-If only one result is found, then it will show that help topic.
+如果仅找到了一个结果，那么会显示结果的帮助主题。
 
-If the argument to `npm help` is not a known help topic, then it will
-call `help-search`.  It is rarely if ever necessary to call this
-command directly.
+如果传给 `npm help` 的参数不是已知的帮助主题，它将会调用 `help-search`。
+几乎没有必要直接调用本命令。
 
-## CONFIGURATION
+## 配置
 
 ### long
 
-* Type: Boolean
-* Default: false
+* 类型: 布尔值
+* 默认值: false
 
-If true, the "long" flag will cause help-search to output context around
-where the terms were found in the documentation.
+如果为 true，"long" 标记将会使 help-search 输出文档中术语找到之处的上下文。
 
-If false, then help-search will just list out the help topics found.
+如果为 false，help-search 将只会列出找到的帮助主题。
 
-## SEE ALSO
+## 参见
 
 * npm(1)
 * npm-help(1)

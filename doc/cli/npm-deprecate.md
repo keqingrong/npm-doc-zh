@@ -1,26 +1,25 @@
-npm-deprecate(1) -- Deprecate a version of a package
+npm-deprecate(1) -- 将包的某个版本标记为已废弃
 ====================================================
 
-## SYNOPSIS
+## 概述
 
     npm deprecate <pkg>[@<version>] <message>
 
-## DESCRIPTION
+## 描述
 
-This command will update the npm registry entry for a package, providing
-a deprecation warning to all who attempt to install it.
+本命令将会更新包的 npm registry 条目，向所有尝试安装它的人提供一个弃用的警告。
 
-It works on version ranges as well as specific versions, so you can do
-something like this:
+它适用于版本范围和指定版本，所以你可以像下面这样做：
 
-    npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
+```sh
+npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
+```
 
-Note that you must be the package owner to deprecate something.  See the
-`owner` and `adduser` help topics.
+注意，你必须是包的所有者才能标记废弃。参见 `owner` 和 `adduser` 帮助主题。
 
-To un-deprecate a package, specify an empty string (`""`) for the `message` argument.
+要取消废弃一个包，为 `message` 参数指定一个空字符串（`""`）。
 
-## SEE ALSO
+## 参见
 
 * npm-publish(1)
 * npm-registry(7)

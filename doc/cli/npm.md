@@ -55,19 +55,20 @@ Microsoft Visual Studio C++。node-gyp 不支持 Python 3。
 特别地，npm 有两种操作模式：
 
 * 全局模式：
-  npm 将包安装到目录前缀 `prefix/lib/node_modules` 中，二进制文件安装到 `prefix/bin`中。
-* 局部模式：
+  npm 将包安装到目录前缀 `prefix/lib/node_modules`
+  中，二进制文件安装到 `prefix/bin` 中。
+* 局部模式：
   npm 将包安装到当前项目目录（默认为当前工作目录）。所有的包被安装到 `./node_modules`，
   二进制文件被安装到 `./node_modules/.bin`。
 
-局部模式是默认模式。在任意命令上使用 `-g` 或者 `--global` 改为全局模式操作。
+局部模式是默认模式。在任意命令上使用 `-g` 或者 `--global` 改为全局模式操作。
 
 ## 开发者用法
 
 如果你正在使用 npm 来开发并且发布你的代码，检查以下的帮助主题：
 
 * json:
-  创建 `package.json` 文件。见 `package.json(5)`。
+  创建 `package.json` 文件。见 `package.json(5)`。
 * link:
   将你当前工作的代码链接到 Node 的 path 路径，以便每次变更时不需要重新安装。
   使用 `npm link` 来实现。
@@ -109,7 +110,7 @@ npm 高度可配置。他会从 5 个地方读取它的配置项。
 * [Bug 追踪](https://npm.community/c/bugs)
 * [Support 追踪](https://npm.community/c/support)
 
-## BUGS
+## 缺陷
 
 当你发现问题时，请报告它们：
 

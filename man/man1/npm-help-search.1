@@ -1,0 +1,40 @@
+.TH "NPM\-HELP\-SEARCH" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-help-search\fR \- 搜索 npm 帮助文档
+.SH 概述
+.P
+.RS 2
+.nf
+npm help\-search <text>
+.fi
+.RE
+.SH 描述
+.P
+本命令会搜索 npm markdown 文档文件，查找提供的术语，然后列出结果，按相关性排序。
+.P
+如果仅找到了一个结果，那么会显示结果的帮助主题。
+.P
+如果传给 \fBnpm help\fP 的参数不是已知的帮助主题，它将会调用 \fBhelp\-search\fP。
+几乎没有必要直接调用本命令。
+.SH 配置
+.SS long
+.RS 0
+.IP \(bu 2
+类型: 布尔值
+.IP \(bu 2
+默认值: false
+
+.RE
+.P
+如果为 true，"long" 标记将会使 help\-search 输出文档中术语找到之处的上下文。
+.P
+如果为 false，help\-search 将只会列出找到的帮助主题。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help npm
+.IP \(bu 2
+npm help help
+
+.RE
+

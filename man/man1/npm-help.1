@@ -1,0 +1,53 @@
+.TH "NPM\-HELP" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-help\fR \- 获取 npm 帮助
+.SH 概述
+.P
+.RS 2
+.nf
+npm help <term> [<terms\.\.>]
+.fi
+.RE
+.SH 描述
+.P
+如果提供了主题，将会显示合适的文档页。
+.P
+如果主题不存在，或者提供了多个术语（term ），那么会运行 \fBhelp\-search\fP 命令寻找一个匹配项。
+注意，如果 \fBhelp\-search\fP 找到单个主题，它将会对那个主题运行 \fBhelp\fP，
+所以唯一匹配等同于指定一个主题名。
+.SH 配置
+.SS viewer
+.RS 0
+.IP \(bu 2
+默认值: POSIX 系统上的 "man"，Windows 上的 "browser"
+.IP \(bu 2
+类型: path
+
+.RE
+.P
+该程序用于查看帮助内容。
+.P
+设置为 \fB"browser"\fP 会在默认的 Web 浏览器中查看 HTML 帮助内容。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help npm
+.IP \(bu 2
+README
+.IP \(bu 2
+npm help 5 folders
+.IP \(bu 2
+npm help config
+.IP \(bu 2
+npm help 7 config
+.IP \(bu 2
+npm help 5 npmrc
+.IP \(bu 2
+npm help 5 package\.json
+.IP \(bu 2
+npm help help\-search
+.IP \(bu 2
+npm help 7 index
+
+.RE
+

@@ -1,0 +1,33 @@
+.TH "NPM\-PREFIX" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-prefix\fR \- 显示目录前缀
+.SH 概述
+.P
+.RS 2
+.nf
+npm prefix [\-g]
+.fi
+.RE
+.SH 描述
+.P
+打印当前目录前缀到标准输出。如果不指定 \fB\-g\fP 参数，则为最近的包含 \fBpackage\.json\fP
+文件的父级目录。
+.P
+如果指定了 \fB\-g\fP 参数，将会是全局的前缀值。更多细节参考 npm help 7 \fBnpm\-config\fP。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help root
+.IP \(bu 2
+npm help bin
+.IP \(bu 2
+npm help 5 folders
+.IP \(bu 2
+npm help config
+.IP \(bu 2
+npm help 7 config
+.IP \(bu 2
+npm help 5 npmrc
+
+.RE
+

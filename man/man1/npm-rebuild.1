@@ -1,0 +1,25 @@
+.TH "NPM\-REBUILD" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-rebuild\fR \- 重新构建包
+.SH 概述
+.P
+.RS 2
+.nf
+npm rebuild [[<@scope>/<name>]\.\.\.]
+
+别名: npm rb
+.fi
+.RE
+.SH 描述
+.P
+本命令会在匹配到的文件夹中运行 \fBnpm build\fP。当你安装一个新版本 Node，
+并且必须使用新的二进制文件重新编译所有的 C++ 插件时，它会很有帮助。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help build
+.IP \(bu 2
+npm help install
+
+.RE
+

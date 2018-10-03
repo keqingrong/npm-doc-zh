@@ -1,0 +1,88 @@
+.TH "NPM\-INIT" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-init\fR \- 创建 package\.json 文件
+.SH 概述
+.P
+.RS 2
+.nf
+npm init [\-\-force|\-f|\-\-yes|\-y|\-\-scope]
+npm init <@scope> (等同于 `npx <@scope>/create`)
+npm init [<@scope>/]<name> (等同于 `npx [<@scope>/]create\-<name>`)
+.fi
+.RE
+.SH 示例
+.P
+使用 \fBcreate\-react\-app\fP \fIhttps://npm\.im/create\-react\-app\fR 创建一个基于 React
+的新项目：
+.P
+.RS 2
+.nf
+$ npm init react\-app \./my\-react\-app
+.fi
+.RE
+.P
+使用 \fBcreate\-esm\fP \fIhttps://npm\.im/create\-esm\fR 创建一个 ESM 兼容的新包：
+.P
+.RS 2
+.nf
+$ mkdir my\-esm\-lib && cd my\-esm\-lib
+$ npm init esm \-\-yes
+.fi
+.RE
+.P
+使用遗留的初始化命令生成一个简单的旧的 package\.json 文件。
+.P
+.RS 2
+.nf
+$ mkdir my\-npm\-pkg && cd my\-npm\-pkg
+$ git init
+$ npm init
+.fi
+.RE
+.P
+生成文件时不询问问题：
+.P
+.RS 2
+.nf
+$ npm init \-y
+.fi
+.RE
+.SH 描述
+.P
+\fBnpm init <initializer>\fP 可以被用于设置一个新的或者已存在的 npm 包。
+.P
+在这种情况下，\fBinitializer\fP 是一个命名为 \fBcreate\-<initializer>\fP 的 npm 包，将会通过
+npm help \fBnpx\fP \fIhttps://npm\.im/npx\fR 安装，然后会执行它的执行文件——很可能会创建或者更新
+\fBpackage\.json\fP，并且执行其他初始化相关的操作。
+.P
+该初始化命令可以被转换为相应的 \fBnpx\fP 操作，如下所示：
+.RS 0
+.IP \(bu 2
+\fBnpm init foo\fP \-> \fBnpx create\-foo\fP
+.IP \(bu 2
+\fBnpm init @usr/foo\fP \-> \fBnpx @usr/create\-foo\fP
+.IP \(bu 2
+\fBnpm init @usr\fP \-> \fBnpx @usr/create\fP
+
+.RE
+.P
+任何额外的选项都将会被直接传给该命令，所以 \fBnpm init foo \-\-hello\fP 将会被映射为
+\fBnpx create\-foo \-\-hello\fP。
+.P
+如果省略了初始化器（只调用 \fBnpm init\fP），init 将会回退到遗留的初始化行为。它将会问你一些问题，
+然后写入 package\.json 文件。它会尝试基于已存在的字段、依赖和选中的选项做出合理猜测。
+它是严格附加的，所以会保留任何已经设置过的字段和值。你也完全可以使用 \fB\-y\fP/\fB\-\-yes\fP 跳过问卷调查。
+如果你传了 \fB\-\-scope\fP，它将会创建限定范围的包（scoped package）。
+.SH 参见
+.RS 0
+.IP \(bu 2
+https://github\.com/npm/init\-package\-json
+.IP \(bu 2
+npm help 5 package\.json
+.IP \(bu 2
+npm help version
+.IP \(bu 2
+npm help 7 scope
+
+.RE
+

@@ -1,0 +1,38 @@
+.TH "NPM\-COMPLETION" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-completion\fR \- npm Tab 补全
+.SH 概述
+.P
+.RS 2
+.nf
+source <(npm completion)
+.fi
+.RE
+.SH 描述
+.P
+在所有的 npm 命令中启用 tab 补全。
+.P
+上面概述中的命令会将自动补全加载到你当前的 shell 中。将它加到你的 \fB~/\.bashrc\fP 或者
+\fB~/\.zshrc\fP 中，将会使自动补全随处可用。
+.P
+.RS 2
+.nf
+npm completion >> ~/\.bashrc
+npm completion >> ~/\.zshrc
+.fi
+.RE
+.P
+你当然也可以将 \fBnpm completion\fP 的输出通过管道导到文件中，例如
+\fB/usr/local/etc/bash_completion\.d/npm\fP（如果你有一个系统将会帮你读取该文件）。
+.P
+当环境中定义了 \fBCOMP_CWORD\fP、\fBCOMP_LINE\fP、\fBCOMP_POINT\fP 时，\fBnpm completion\fP
+会进入 "plumbing mode" 模式，基于参数输出补全。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help 7 developers
+.IP \(bu 2
+npm help npm
+
+.RE
+

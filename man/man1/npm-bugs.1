@@ -1,0 +1,58 @@
+.TH "NPM\-BUGS" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-bugs\fR \- 在 Web 浏览器中打开包的 bugs 追踪页面
+.SH 概述
+.P
+.RS 2
+.nf
+npm bugs [<pkgname>]
+
+别名: issues
+.fi
+.RE
+.SH 描述
+.P
+本命令尝试猜测包的 bug 追踪页面 URL 地址，然后尝试使用 \fB\-\-browser\fP 配置参数打开。
+如果没有提供包名，它会在当前文件夹中搜索 \fBpackage\.json\fP，使用 \fBname\fP 属性。
+.SH 配置
+.SS browser
+.RS 0
+.IP \(bu 2
+默认值: OS X: \fB"open"\fP, Windows: \fB"start"\fP, 其他系统: \fB"xdg\-open"\fP
+.IP \(bu 2
+类型: 字符串
+
+.RE
+.P
+浏览器，被 \fBnpm bugs\fP 命令调用，用于打开网站。
+.SS registry
+.RS 0
+.IP \(bu 2
+默认值: \fBhttps://registry\.npmjs\.org/\fP
+.IP \(bu 2
+类型: url
+
+.RE
+.P
+npm 包 registry 的基础 URL。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help docs
+.IP \(bu 2
+npm help view
+.IP \(bu 2
+npm help publish
+.IP \(bu 2
+npm help 7 registry
+.IP \(bu 2
+npm help config
+.IP \(bu 2
+npm help 7 config
+.IP \(bu 2
+npm help 5 npmrc
+.IP \(bu 2
+npm help 5 package\.json
+
+.RE
+

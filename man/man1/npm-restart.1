@@ -1,0 +1,59 @@
+.TH "NPM\-RESTART" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-restart\fR \- 重新启动包
+.SH 概述
+.P
+.RS 2
+.nf
+npm restart [\-\- <args>]
+.fi
+.RE
+.SH 描述
+.P
+本命令重新启动一个包。
+.P
+本命令运行包的 \fB"stop"\fP、\fB"restart"\fP、\fB"start"\fP 脚本，以及相关的 \fBpre\-\fP 和 \fBpost\-\fP
+脚本，按照以下给的顺序：
+.RS 0
+.IP 1. 3
+prerestart
+.IP 2. 3
+prestop
+.IP 3. 3
+stop
+.IP 4. 3
+poststop
+.IP 5. 3
+restart
+.IP 6. 3
+prestart
+.IP 7. 3
+start
+.IP 8. 3
+poststart
+.IP 9. 3
+postrestart
+
+.RE
+.SH 注意
+.P
+注意，除了 \fB"stop"\fP 和 \fB"start"\fP 脚本之外，还会运行 \fB"restart"\fP 脚本，但不会取代它们。
+.P
+这是 \fBnpm\fP 主版本 2\.0 的行为。随着主版本号的增长，这种行为将会变化。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help run\-script
+.IP \(bu 2
+npm help 7 scripts
+.IP \(bu 2
+npm help test
+.IP \(bu 2
+npm help start
+.IP \(bu 2
+npm help stop
+.IP \(bu 2
+npm apihelp restart
+
+.RE
+

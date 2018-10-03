@@ -1,0 +1,52 @@
+.TH "NPM\-EXPLORE" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-explore\fR \- 浏览安装过的包
+.SH 概述
+.P
+.RS 2
+.nf
+npm explore <pkg> [ \-\- <command>]
+.fi
+.RE
+.SH 描述
+.P
+在指定的已安装的包目录下创建（spawn）一个子 shell 。
+.P
+如果指定了 command，它会在子 shell 中执行，然后立即终止。
+.P
+这在 \fBnode_modules\fP 文件夹中有 git 子模块 \fIhttps://git\-scm\.com/docs/git\-submodule\fR
+的情况下特别有用。
+.P
+.RS 2
+.nf
+npm explore some\-dependency \-\- git pull origin master
+.fi
+.RE
+.P
+注意，包不会自动向后重新构建，所以如果你做了任何更改一定要使用 \fBnpm rebuild <pkg>\fP 重新构建。
+.SH 配置
+.SS shell
+.RS 0
+.IP \(bu 2
+默认值: SHELL 环境变量，或者 POSIX 系统上的 "bash"，或者 Windows 上的 "cmd"
+.IP \(bu 2
+类型: path
+
+.RE
+.P
+运行 \fBnpm explore\fP 命令的 shell。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help 5 folders
+.IP \(bu 2
+npm help edit
+.IP \(bu 2
+npm help rebuild
+.IP \(bu 2
+npm help build
+.IP \(bu 2
+npm help install
+
+.RE
+

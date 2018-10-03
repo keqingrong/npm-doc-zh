@@ -1,0 +1,32 @@
+.TH "NPM\-START" "1" "October 2018" "" ""
+.SH "NAME"
+\fBnpm-start\fR \- 启动包
+.SH 概述
+.P
+.RS 2
+.nf
+npm start [\-\- <args>]
+.fi
+.RE
+.SH 描述
+.P
+运行包的 \fB"scripts"\fP 对象的 \fB"start"\fP 属性中指定的任意命令。如果 \fB"scripts"\fP
+对象没有指定 \fB"start"\fP 属性，它将会运行 \fBnode server\.js\fP。
+.P
+从 ` \fIhttps://blog\.npmjs\.org/post/98131109725/npm\-2\-0\-0\fR 起，
+执行脚本时，你可以使用自定义参数。更多细节参考 npm help \fBnpm\-run\-script\fP。
+.SH 参见
+.RS 0
+.IP \(bu 2
+npm help run\-script
+.IP \(bu 2
+npm help 7 scripts
+.IP \(bu 2
+npm help test
+.IP \(bu 2
+npm help restart
+.IP \(bu 2
+npm help stop
+
+.RE
+

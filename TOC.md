@@ -11,13 +11,13 @@
 * [npm adduser](doc/cli/npm-adduser.md) (aliases: `npm login`, `npm add-user`)
 * [npm audit](doc/cli/npm-audit.md)
 * [npm bin](doc/cli/npm-bin.md) 🎉
-* [npm bugs](doc/cli/npm-bugs.md) (alias: `npm issues`)
+* [npm bugs](doc/cli/npm-bugs.md) (alias: `npm issues`) 🎉
 * [npm build](doc/cli/npm-build.md) 🎉
-* [npm bundle](doc/cli/npm-bundle.md)
+* [npm bundle](doc/cli/npm-bundle.md) 🎉
 * [npm cache](doc/cli/npm-cache.md)
 * [npm ci](doc/cli/npm-ci.md)
 * [npm completion](doc/cli/npm-completion.md)
-* [npm config](doc/cli/npm-config.md) (alias: `npm c`)
+* [npm config](doc/cli/npm-config.md) (alias: `npm c`, `npm get`, `npm set`) 🎉
 * [npm dedupe](doc/cli/npm-dedupe.md) (aliases: `npm find-dupes`, `npm ddp`)
 * [npm deprecate](doc/cli/npm-deprecate.md)
 * [npm dist-tag](doc/cli/npm-dist-tag.md) (alias: `npm dist-tags`)
@@ -25,8 +25,8 @@
 * [npm doctor](doc/cli/npm-doctor.md)
 * [npm edit](doc/cli/npm-edit.md)
 * [npm explore](doc/cli/npm-explore.md) 🎉
-* [npm help](doc/cli/npm-help.md)
-* [npm help-search](doc/cli/npm-help-search.md)
+* [npm help](doc/cli/npm-help.md) 🎉
+* [npm help-search](doc/cli/npm-help-search.md) 🎉
 * [npm hook](doc/cli/npm-hook.md)
 * [npm init](doc/cli/npm-init.md) (alias: `npm create`) 🎉
 * [npm install](doc/cli/npm-install.md) (alias: `npm i`, `npm add`)
@@ -52,7 +52,7 @@
 * [npm shrinkwrap](doc/cli/npm-shrinkwrap.md)
 * [npm star](doc/cli/npm-star.md) 🎉
 * [npm stars](doc/cli/npm-stars.md) 🎉
-* [npm start](doc/cli/npm-start.md)
+* [npm start](doc/cli/npm-start.md) 🎉
 * [npm stop](doc/cli/npm-stop.md) 🎉
 * [npm team](doc/cli/npm-team.md)
 * [npm test](doc/cli/npm-test.md) (aliases: `npm t`, `npm tst`) 🎉

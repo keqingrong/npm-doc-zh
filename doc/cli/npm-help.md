@@ -20,7 +20,7 @@ npm-help(1) -- 获取 npm 帮助
 * 默认值: POSIX 系统上的 "man"，Windows 上的 "browser"
 * 类型: path
 
-该程序用于查看帮助内容。
+该程序用于查看帮助内容。
 
 设置为 `"browser"` 会在默认的 Web 浏览器中查看 HTML 帮助内容。
 

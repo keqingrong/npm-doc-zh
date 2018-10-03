@@ -143,7 +143,7 @@ npm Tab 补全
 
 ### npm-prefix(1)
 
-显示前缀
+显示目录前缀
 
 ### npm-profile(1)
 

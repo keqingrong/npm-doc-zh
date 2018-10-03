@@ -1,19 +1,18 @@
-npm-prefix(1) -- Display prefix
+npm-prefix(1) -- 显示目录前缀
 ===============================
 
-## SYNOPSIS
+## 概述
 
     npm prefix [-g]
 
-## DESCRIPTION
+## 描述
 
-Print the local prefix to standard out. This is the closest parent directory
-to contain a package.json file unless `-g` is also specified.
+打印当前目录前缀到标准输出。如果不指定 `-g` 参数，则为最近的包含 `package.json`
+文件的父级目录。
 
-If `-g` is specified, this will be the value of the global prefix. See
-`npm-config(7)` for more detail.
+如果指定了 `-g` 参数，将会是全局的前缀值。更多细节参考 `npm-config(7)`。
 
-## SEE ALSO
+## 参见
 
 * npm-root(1)
 * npm-bin(1)

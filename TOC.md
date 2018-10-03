@@ -6,7 +6,7 @@
 
 ## cli
 
-* [npm](doc/cli/npm.md)
+* [npm](doc/cli/npm.md) 🎉
 * [npm access](doc/cli/npm-access.md)
 * [npm adduser](doc/cli/npm-adduser.md) (aliases: `npm login`, `npm add-user`)
 * [npm audit](doc/cli/npm-audit.md)

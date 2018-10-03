@@ -139,7 +139,7 @@ npm Tab 补全
 
 ### npm-ping(1)
 
-检测 npm registry
+检测 npm registry 连接
 
 ### npm-prefix(1)
 

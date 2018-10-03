@@ -16,12 +16,12 @@
 * [npm bundle](doc/cli/npm-bundle.md) 🎉
 * [npm cache](doc/cli/npm-cache.md)
 * [npm ci](doc/cli/npm-ci.md)
-* [npm completion](doc/cli/npm-completion.md)
+* [npm completion](doc/cli/npm-completion.md) 🎉
 * [npm config](doc/cli/npm-config.md) (alias: `npm c`, `npm get`, `npm set`) 🎉
 * [npm dedupe](doc/cli/npm-dedupe.md) (aliases: `npm find-dupes`, `npm ddp`)
-* [npm deprecate](doc/cli/npm-deprecate.md)
+* [npm deprecate](doc/cli/npm-deprecate.md) 🎉
 * [npm dist-tag](doc/cli/npm-dist-tag.md) (alias: `npm dist-tags`)
-* [npm docs](doc/cli/npm-docs.md) (alias: `npm home`)
+* [npm docs](doc/cli/npm-docs.md) (alias: `npm home`) 🎉
 * [npm doctor](doc/cli/npm-doctor.md)
 * [npm edit](doc/cli/npm-edit.md)
 * [npm explore](doc/cli/npm-explore.md) 🎉
@@ -37,15 +37,15 @@
 * [npm ls](doc/cli/npm-ls.md) (aliases: `npm list`, `npm la`, `npm ll`)
 * [npm outdated](doc/cli/npm-outdated.md)
 * [npm owner](doc/cli/npm-owner.md) (alias: `npm author`)
-* [npm pack](doc/cli/npm-pack.md)
-* [npm ping](doc/cli/npm-ping.md)
-* [npm prefix](doc/cli/npm-prefix.md)
+* [npm pack](doc/cli/npm-pack.md) 🎉
+* [npm ping](doc/cli/npm-ping.md) 🎉
+* [npm prefix](doc/cli/npm-prefix.md) 🎉
 * [npm profile](doc/cli/npm-profile.md)
 * [npm prune](doc/cli/npm-prune.md)
 * [npm publish](doc/cli/npm-publish.md)
 * [npm rebuild](doc/cli/npm-rebuild.md) (alias: `npm rb`) 🎉
-* [npm repo](doc/cli/npm-repo.md)
-* [npm restart](doc/cli/npm-restart.md)
+* [npm repo](doc/cli/npm-repo.md) 🎉
+* [npm restart](doc/cli/npm-restart.md) 🎉
 * [npm root](doc/cli/npm-root.md) 🎉
 * [npm run-script](doc/cli/npm-run-script.md) (alias: `npm run`)
 * [npm search](doc/cli/npm-search.md) (aliases: `npm s`, `npm se`, `npm find`)

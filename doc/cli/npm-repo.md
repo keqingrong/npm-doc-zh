@@ -1,4 +1,4 @@
-npm-repo(1) -- 在浏览器中打开包的仓库页面
+npm-repo(1) -- 在浏览器中打开包的代码仓库页面
 ========================================================
 
 ## 概述
@@ -7,10 +7,8 @@ npm-repo(1) -- 在浏览器中打开包的仓库页面
 
 ## 描述
 
-This command tries to guess at the likely location of a package's
-repository URL, and then tries to open it using the `--browser`
-config param. If no package name is provided, it will search for
-a `package.json` in the current folder and use the `name` property.
+本命令尝试猜测包的代码仓库 URL 地址，然后尝试使用 `--browser` 配置参数打开。
+如果没有提供包名，它会在当前文件夹中搜索 `package.json`，使用 `name` 属性。
 
 ## 配置
 

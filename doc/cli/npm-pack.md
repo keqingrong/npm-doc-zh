@@ -1,27 +1,25 @@
-npm-pack(1) -- Create a tarball from a package
+npm-pack(1) -- 创建包的 tarball 文件
 ==============================================
 
-## SYNOPSIS
+## 概述
 
     npm pack [[<@scope>/]<pkg>...] [--dry-run]
 
-## DESCRIPTION
+## 描述
 
-For anything that's installable (that is, a package folder, tarball,
-tarball url, name@tag, name@version, name, or scoped name), this
-command will fetch it to the cache, and then copy the tarball to the
-current working directory as `<name>-<version>.tgz`, and then write
-the filenames out to stdout.
+任何可安装的，包括包文件夹、tarball、tarball url、名称@标签（name@tag）、
+名称@版本（name@version）、名称，或者限定范围的名称（scoped name），
+本命令将会获取它保存到缓存中，然后将这个 tarball 复制到当前工作目录，保存为
+`<name>-<version>.tgz` 形式，最后将文件名写到标准输出。
 
-If the same package is specified multiple times, then the file will be
-overwritten the second time.
+如果同一个包被指定了多次，后一次的将会覆盖前一次的文件。
 
-If no arguments are supplied, then npm packs the current package folder.
+如果没有提供参数，npm 会打包当前文件夹。
 
-The `--dry-run` argument will do everything that pack usually does without
-actually packing anything. Reports on what would have gone into the tarball.
+`--dry-run` 参数将会做一切打包的时候做的事情，除了真正地打包。它会报告哪些东西会被打包到
+tarball 文件中。
 
-## SEE ALSO
+## 参见
 
 * npm-cache(1)
 * npm-publish(1)

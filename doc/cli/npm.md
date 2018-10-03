@@ -1,63 +1,54 @@
-npm(1) -- javascript package manager
+npm(1) -- JavaScript 包管理器
 ====================================
 
-## SYNOPSIS
+## 概述
 
     npm <command> [args]
 
-## VERSION
+## 版本
 
 @VERSION@
 
-## DESCRIPTION
+## 描述
 
-npm is the package manager for the Node JavaScript platform.  It puts
-modules in place so that node can find them, and manages dependency
-conflicts intelligently.
+npm 是 Node 平台的 JavaScript 包管理器。它将模块放在适当的位置，这样 Node
+可以找到它们，并且明智地管理依赖冲突。
 
-It is extremely configurable to support a wide variety of use cases.
-Most commonly, it is used to publish, discover, install, and develop node
-programs.
+它高度可配置，支持各种用例。通常，它被用于发布、发现、安装、开发 Node 程序。
 
-Run `npm help` to get a list of available commands.
+运行 `npm help` 来获取可用命令列表。
 
-## IMPORTANT
+## 重要信息
 
-npm is configured to use npm, Inc.'s public registry at
-https://registry.npmjs.org by default. Use of the npm public registry is
-subject to terms of use available at https://www.npmjs.com/policies/terms.
+npm 默认被配置为使用 npm 股份有限公司的公共 registry https://registry.npmjs.org 。该 npm 公共 registry 的使用服从于 https://www.npmjs.com/policies/terms 上的使用条款。
 
-You can configure npm to use any compatible registry you like, and even run
-your own registry. Use of someone else's registry may be governed by their
-terms of use.
+你可以配置 npm，使用任何你喜欢的兼容的 registry，甚至运行你自己的 registry。
+其他人的 registry 使用受他们的使用条款约束。
 
-## INTRODUCTION
+## 介绍
 
-You probably got npm because you want to install stuff.
+你用 npm 可能因为你想要安装东西。
 
-Use `npm install blerg` to install the latest version of "blerg".  Check out
-`npm-install(1)` for more info.  It can do a lot of stuff.
+使用 `npm install blerg` 来安装最新版的 "blerg"。更多信息查看 `npm-install(1)`。
+它可以做很多事。
 
-Use the `npm search` command to show everything that's available.
-Use `npm ls` to show everything you've installed.
+使用 `npm search` 命令来显示所有可用的内容。
 
-## DEPENDENCIES
+使用 `npm ls` 来显示所有你已经安装的内容。
 
-If a package references to another package with a git URL, npm depends
-on a preinstalled git.
+## 依赖
 
-If one of the packages npm tries to install is a native node module and
-requires compiling of C++ Code, npm will use
-[node-gyp](https://github.com/TooTallNate/node-gyp) for that task.
-For a Unix system, [node-gyp](https://github.com/TooTallNate/node-gyp)
-needs Python, make and a buildchain like GCC. On Windows,
-Python and Microsoft Visual Studio C++ are needed. Python 3 is
-not supported by [node-gyp](https://github.com/TooTallNate/node-gyp).
-For more information visit
-[the node-gyp repository](https://github.com/TooTallNate/node-gyp) and
-the [node-gyp Wiki](https://github.com/TooTallNate/node-gyp/wiki).
+如果一个包通过 git URL 引用另外一个包，npm 需要依赖预先安装的 git。
 
-## DIRECTORIES
+如果 npm 尝试安装的其中一个包，是一个原生 Node 模块，并且需要编译 C++ 代码，npm 将使用 
+[node-gyp](https://github.com/nodejs/node-gyp) 完成这项工作。
+
+对于 Unix 系统，node-gyp 需要 Python、make 和一个 buildchain，如 GCC。在 Windows
+上，需要 Python 和 Microsoft Visual Studio C++。node-gyp 不支持 Python 3。
+更多信息访问 [node-gyp 代码仓库](https://github.com/nodejs/node-gyp)
+和 [node-gyp Wiki](https://github.com/nodejs/node-gyp/wiki)。
+
+## 目录
 
 See `npm-folders(5)` to learn about where npm puts stuff.
 
@@ -74,7 +65,7 @@ In particular, npm has two modes of operation:
 Local mode is the default.  Use `-g` or `--global` on any command to
 operate in global mode instead.
 
-## DEVELOPER USAGE
+## 开发者用法
 
 If you're using npm to develop and publish your code, check out the
 following help topics:
@@ -95,7 +86,7 @@ following help topics:
 * publish:
   Use the `npm publish` command to upload your code to the registry.
 
-## CONFIGURATION
+## 配置
 
 npm is extremely configurable.  It reads its configuration options from
 5 places.
@@ -123,37 +114,34 @@ npm is extremely configurable.  It reads its configuration options from
 
 See `npm-config(7)` for much much more information.
 
-## CONTRIBUTIONS
+## 贡献
 
-Patches welcome!
+欢迎提交补丁！
 
-If you would like to contribute, but don't know what to work on, read
-the contributing guidelines and check the issues list.
+如果你想要贡献，但不知道要做什么，请阅读贡献指导方针，并检查问题列表。
 
 * [CONTRIBUTING.md](https://github.com/npm/cli/blob/latest/CONTRIBUTING.md)
-* [Bug tracker](https://npm.community/c/bugs)
-* [Support tracker](https://npm.community/c/support)
+* [Bug 追踪](https://npm.community/c/bugs)
+* [Support 追踪](https://npm.community/c/support)
 
 ## BUGS
 
-When you find issues, please report them:
+当你发现问题时，请报告它们：
 
 * web:
   <https://npm.community/c/bugs>
 
-Be sure to follow the template and bug reporting guidelines. You can also ask
-for help in the [support forum](https://npm.community/c/support) if you're
-unsure if it's actually a bug or are having trouble coming up with a detailed
-reproduction to report.
+一定要遵照模版和 bug 报告指导方针。如果你不确定它是 bug 或者遇到了详细的可复现的问题需要报告，
+你也可以在 [支持论坛](https://npm.community/c/support) 上请求帮助。
 
-## AUTHOR
+## 作者
 
 [Isaac Z. Schlueter](http://blog.izs.me/) ::
 [isaacs](https://github.com/isaacs/) ::
 [@izs](https://twitter.com/izs) ::
 <i@izs.me>
 
-## SEE ALSO
+## 参见
 
 * npm-help(1)
 * README

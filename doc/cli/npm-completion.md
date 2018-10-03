@@ -1,31 +1,29 @@
-npm-completion(1) -- Tab Completion for npm
+npm-completion(1) -- npm Tab 补全
 ===========================================
 
-## SYNOPSIS
+## 概述
 
     source <(npm completion)
 
-## DESCRIPTION
+## 描述
 
-Enables tab-completion in all npm commands.
+在所有的 npm 命令中启用 tab 补全。
 
-The synopsis above
-loads the completions into your current shell.  Adding it to
-your ~/.bashrc or ~/.zshrc will make the completions available
-everywhere:
+上面概述中的命令会将自动补全加载到你当前的 shell 中。将它加到你的 `~/.bashrc` 或者
+`~/.zshrc` 中，将会使自动补全随处可用。
 
-    npm completion >> ~/.bashrc
-    npm completion >> ~/.zshrc
+```sh
+npm completion >> ~/.bashrc
+npm completion >> ~/.zshrc
+```
 
-You may of course also pipe the output of npm completion to a file
-such as `/usr/local/etc/bash_completion.d/npm` if you have a system
-that will read that file for you.
+你当然也可以将 `npm completion` 的输出通过管道导到文件中，例如
+`/usr/local/etc/bash_completion.d/npm`（如果你有一个系统将会帮你读取该文件）。
 
-When `COMP_CWORD`, `COMP_LINE`, and `COMP_POINT` are defined in the
-environment, `npm completion` acts in "plumbing mode", and outputs
-completions based on the arguments.
+当环境中定义了 `COMP_CWORD`、`COMP_LINE`、`COMP_POINT` 时，`npm completion`
+会进入 "plumbing mode" 模式，基于参数输出补全。
 
-## SEE ALSO
+## 参见
 
 * npm-developers(7)
 * npm(1)

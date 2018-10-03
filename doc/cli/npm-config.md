@@ -1,7 +1,7 @@
-npm-config(1) -- Manage the npm configuration files
+npm-config(1) -- 管理 npm 配置文件
 ===================================================
 
-## SYNOPSIS
+## 概述
 
     npm config set <key> <value> [-g|--global]
     npm config get <key>
@@ -11,60 +11,55 @@ npm-config(1) -- Manage the npm configuration files
     npm get <key>
     npm set <key> <value> [-g|--global]
 
-    aliases: c
+    别名: c
 
-## DESCRIPTION
+## 描述
 
-npm gets its config settings from the command line, environment
-variables, `npmrc` files, and in some cases, the `package.json` file.
+npm 会从命令行，环境变量，`npmrc` 文件，（某些情况下）`package.json` 文件获取配置设置。
 
-See npmrc(5) for more information about the npmrc files.
+关于 npmrc 文件的更多信息参见 `npmrc(5)`。
 
-See `npm-config(7)` for a more thorough discussion of the mechanisms
-involved.
+对有关机制更全面的讨论参见 `npm-config(7)`。
 
-The `npm config` command can be used to update and edit the contents
-of the user and global npmrc files.
+`npm config` 命令可以被用于更新、编辑用户和全局的 `npmrc` 文件内容。
 
-## Sub-commands
+## 子命令
 
-Config supports the following sub-commands:
+`npm config` 支持以下子命令：
 
 ### set
 
     npm config set key value
 
-Sets the config key to the value.
+将配置 `key` 设置为 `value`。
 
-If value is omitted, then it sets it to "true".
+如果省略了 `value`，将会设置为 `"true"`。
 
 ### get
 
     npm config get key
 
-Echo the config value to stdout.
+输出配置值到标准输出。
 
 ### list
 
     npm config list
 
-Show all the config settings. Use `-l` to also show defaults. Use `--json`
-to show the settings in json format.
+显示所有的配置设置。使用 `-l` 会显示所有的默认配置。使用 `--json` 会以 JSON 格式显示所有配置。
 
 ### delete
 
     npm config delete key
 
-Deletes the key from all configuration files.
+从所有的配置文件中删除 `key`。
 
 ### edit
 
     npm config edit
 
-Opens the config file in an editor.  Use the `--global` flag to edit the
-global config.
+在编辑器中打开配置文件。使用 `--global` 标记来编辑全局配置。
 
-## SEE ALSO
+## 参见
 
 * npm-folders(5)
 * npm-config(7)

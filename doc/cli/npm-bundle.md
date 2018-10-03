@@ -1,14 +1,13 @@
-npm-bundle(1) -- REMOVED
+npm-bundle(1) -- 已移除
 ========================
 
-## DESCRIPTION
+## 描述
 
-The `npm bundle` command has been removed in 1.0, for the simple reason
-that it is no longer necessary, as the default behavior is now to
-install packages into the local space.
+`npm bundle` 命令已经在 1.0 中被移除了，理由很简单，它已经不再需要，作为默认行为，
+现在会将包默认安装到本地空间。
 
-Just use `npm install` now to do what `npm bundle` used to do.
+现在直接使用 `npm install` 代替过去 `npm bundle` 做的。
 
-## SEE ALSO
+## 参见
 
 * npm-install(1)

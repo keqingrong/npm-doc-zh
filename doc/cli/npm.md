@@ -12,7 +12,7 @@ npm(1) -- JavaScript 包管理器
 ## 描述
 
 npm 是 Node 平台的 JavaScript 包管理器。它将模块放在适当的位置，这样 Node
-可以找到它们，并且明智地管理依赖冲突。
+可以找到它们，并且智能地管理依赖冲突。
 
 它高度可配置，支持各种用例。通常，它被用于发布、发现、安装、开发 Node 程序。
 
@@ -20,99 +20,84 @@ npm 是 Node 平台的 JavaScript 包管理器。它将模块放在适当的位�
 
 ## 重要信息
 
-npm 默认被配置为使用 npm 股份有限公司的公共 registry https://registry.npmjs.org 。该 npm 公共 registry 的使用服从于 https://www.npmjs.com/policies/terms 上的使用条款。
+npm 默认被配置为使用 npm 股份有限公司的公共 registry https://registry.npmjs.org 。
+该 npm 公共 registry 的使用服从于 https://www.npmjs.com/policies/terms 上的使用条款。
 
 你可以配置 npm，使用任何你喜欢的兼容的 registry，甚至运行你自己的 registry。
-其他人的 registry 使用受他们的使用条款约束。
+其他人的 registry 使用受他们的使用条款约束。
 
 ## 介绍
 
 你用 npm 可能因为你想要安装东西。
 
-使用 `npm install blerg` 来安装最新版的 "blerg"。更多信息查看 `npm-install(1)`。
+使用 `npm install blerg` 来安装最新版的 `"blerg"`。更多信息查看 `npm-install(1)`。
 它可以做很多事。
 
 使用 `npm search` 命令来显示所有可用的内容。
 
-使用 `npm ls` 来显示所有你已经安装的内容。
+使用 `npm ls` 来显示所有你已经安装的内容。
 
 ## 依赖
 
 如果一个包通过 git URL 引用另外一个包，npm 需要依赖预先安装的 git。
 
 如果 npm 尝试安装的其中一个包，是一个原生 Node 模块，并且需要编译 C++ 代码，npm 将使用 
-[node-gyp](https://github.com/nodejs/node-gyp) 完成这项工作。
-
-对于 Unix 系统，node-gyp 需要 Python、make 和一个 buildchain，如 GCC。在 Windows
-上，需要 Python 和 Microsoft Visual Studio C++。node-gyp 不支持 Python 3。
+[node-gyp](https://github.com/nodejs/node-gyp) 完成这项工作。对于 Unix 系统，
+node-gyp 需要 Python、make 和一个构建工具链，如 GCC。在 Windows 上，需要 Python 和
+Microsoft Visual Studio C++。node-gyp 不支持 Python 3。
 更多信息访问 [node-gyp 代码仓库](https://github.com/nodejs/node-gyp)
 和 [node-gyp Wiki](https://github.com/nodejs/node-gyp/wiki)。
 
 ## 目录
 
-See `npm-folders(5)` to learn about where npm puts stuff.
+查看 `npm-folders(5)` 来了解 npm 将东西放在哪儿。
 
-In particular, npm has two modes of operation:
+特别地，npm 有两种操作模式：
 
-* global mode:
-  npm installs packages into the install prefix at
-  `prefix/lib/node_modules` and bins are installed in `prefix/bin`.
-* local mode:
-  npm installs packages into the current project directory, which
-  defaults to the current working directory.  Packages are installed to
-  `./node_modules`, and bins are installed to `./node_modules/.bin`.
+* 全局模式：
+  npm 将包安装到目录前缀 `prefix/lib/node_modules` 中，二进制文件安装到 `prefix/bin`中。
+* 局部模式：
+  npm 将包安装到当前项目目录（默认为当前工作目录）。所有的包被安装到 `./node_modules`，
+  二进制文件被安装到 `./node_modules/.bin`。
 
-Local mode is the default.  Use `-g` or `--global` on any command to
-operate in global mode instead.
+局部模式是默认模式。在任意命令上使用 `-g` 或者 `--global` 改为全局模式操作。
 
 ## 开发者用法
 
-If you're using npm to develop and publish your code, check out the
-following help topics:
+如果你正在使用 npm 来开发并且发布你的代码，检查以下的帮助主题：
 
 * json:
-  Make a package.json file.  See `package.json(5)`.
+  创建 `package.json` 文件。见 `package.json(5)`。
 * link:
-  For linking your current working code into Node's path, so that you
-  don't have to reinstall every time you make a change.  Use
-  `npm link` to do this.
+  将你当前工作的代码链接到 Node 的 path 路径，以便每次变更时不需要重新安装。
+  使用 `npm link` 来实现。
 * install:
-  It's a good idea to install things if you don't need the symbolic link.
-  Especially, installing other peoples code from the registry is done via
-  `npm install`
+  如果你不需要符号链接的话，它是安装东西的好主意。尤其是通过 `npm install`
+  从 registry 安装其他人的代码。
 * adduser:
-  Create an account or log in.  Credentials are stored in the
-  user config file.
+  创建账号或者登录。证书会被存储到用户配置文件中。
 * publish:
-  Use the `npm publish` command to upload your code to the registry.
+  使用 `npm publish` 命令上传你的代码到 registry 。
 
 ## 配置
 
-npm is extremely configurable.  It reads its configuration options from
-5 places.
+npm 高度可配置。他会从 5 个地方读取它的配置项。
 
-* Command line switches:
-  Set a config with `--key val`.  All keys take a value, even if they
-  are booleans (the config parser doesn't know what the options are at
-  the time of parsing).  If no value is provided, then the option is set
-  to boolean `true`.
-* Environment Variables:
-  Set any config by prefixing the name in an environment variable with
-  `npm_config_`.  For example, `export npm_config_key=val`.
-* User Configs:
-  The file at $HOME/.npmrc is an ini-formatted list of configs.  If
-  present, it is parsed.  If the `userconfig` option is set in the cli
-  or env, then that will be used instead.
-* Global Configs:
-  The file found at ../etc/npmrc (from the node executable, by default
-  this resolves to /usr/local/etc/npmrc) will be parsed if it is found.
-  If the `globalconfig` option is set in the cli, env, or user config,
-  then that file is parsed instead.
-* Defaults:
-  npm's default configuration options are defined in
-  lib/utils/config-defs.js.  These must not be changed.
+* 命令行开关：
+  通过 `--key val` 设置配置。所有的 key 都有一个 value，即使它们是布尔值
+  （配置解析器在解析时不知道选项是什么）。如果没有提供 value，那么选项会被设置为布尔值 `true`。
+* 环境变量：
+  在环境变量中通过设置带 `npm_config_` 前缀名称的配置。如：`export npm_config_key=val`。
+* 用户配置：
+  该文件位于 `$HOME/.npmrc`，是一组 INI 格式的配置。如果存在，它会被解析。
+  如果在命令行或者环境变量中设置了 `userconfig` 选项，将会使用它代替。
+* 全局配置：
+  如果可以找到 `../etc/npmrc`（从 Node 可执行文件处，默认会解析到
+  `/usr/local/etc/npmrc`）文件，它将会被解析。
+* 默认值：
+  npm 的默认配置项定义在 `lib/utils/config-defs.js` 中。这些必须是不可更改的。
 
-See `npm-config(7)` for much much more information.
+更多信息参见 `npm-config(7)`。
 
 ## 贡献
 

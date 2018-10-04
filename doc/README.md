@@ -1,165 +1,152 @@
-npm(1) -- a JavaScript package manager
+npm(1) -- JavaScript 包管理器
 ==============================
 
-[![Build Status](https://img.shields.io/travis/npm/cli/latest.svg)](https://travis-ci.org/npm/cli)
+[![构建状态](https://img.shields.io/travis/npm/cli/latest.svg)](https://travis-ci.org/npm/cli)
 
-## SYNOPSIS
+## 概述
 
-This is just enough info to get you up and running.
+这里有足够的信息能让你迅速上手。
 
-Much more info will be available via `npm help` once it's installed.
+一旦安装了 npm，更多信息可以通过 `npm help` 获取。
 
-## IMPORTANT
+## 重要信息
 
-**You need node v6 or higher to run this program.**
+**你需要 Node v6 或者更高的版本来运行该程序。**
 
-To install an old **and unsupported** version of npm that works on node v5
-and prior, clone the git repo and dig through the old tags and branches.
+要安装可以运行在 Node v5 和之前版本上 **不再提供支持的** 旧版 npm，请克隆该 git 仓库，查找旧
+的标签和分支。
 
-**npm is configured to use npm, Inc.'s public registry at
-<https://registry.npmjs.org> by default.** Use of the npm public registry
-is subject to terms of use available at <https://www.npmjs.com/policies/terms>.
+npm 默认被配置为使用 npm 股份有限公司的公共 registry https://registry.npmjs.org 。
+该 npm 公共 registry 的使用服从于 https://www.npmjs.com/policies/terms 上的使用条款。
 
-You can configure npm to use any compatible registry you
-like, and even run your own registry. Check out the [doc on
-registries](https://docs.npmjs.com/misc/registry).
+你可以配置 npm 使用任何你喜欢的兼容的 registry，甚至运行你自己的 registry。其他人的
+registry 的使用受他们的使用条款约束。
 
-## Super Easy Install
+## 极简安装
 
-npm is bundled with [node](https://nodejs.org/en/download/).
+npm 被打包在 [node](https://nodejs.org/en/download/) 中。
 
-### Windows Computers
+### Windows 电脑
 
-[Get the MSI](https://nodejs.org/en/download/).  npm is in it.
+[获取 MSI 安装包](https://nodejs.org/en/download/)。npm 包含在内。
 
-### Apple Macintosh Computers
+### Apple 电脑
 
-[Get the pkg](https://nodejs.org/en/download/).  npm is in it.
+[获取 pkg 安装包](https://nodejs.org/en/download/)。npm 包含在内。
 
-### Other Sorts of Unices
+### 各种 Unix
 
-Run `make install`.  npm will be installed with node.
+运行 `make install`。npm 将会和 Node 一起安装。
 
-If you want a more fancy pants install (a different version, customized
-paths, etc.) then read on.
+如果你想要更高级的安装方式（不同版本，自定义路径等），请继续往下读。
 
-## Fancy Install (Unix)
+## 高级安装 (Unix)
 
-There's a pretty robust install script at
-<https://www.npmjs.com/install.sh>.  You can download that and run it.
+https://www.npmjs.com/install.sh 上有一个非常健壮的安装脚本。你可以下载后运行它。
 
-Here's an example using curl:
+这里是一个示例，使用了 curl：
 
 ```sh
 curl -L https://www.npmjs.com/install.sh | sh
 ```
 
-### Slightly Fancier
+### 稍微高级
 
-You can set any npm configuration params with that script:
+你可以为安装脚本设置配置参数：
 
 ```sh
 npm_config_prefix=/some/path sh install.sh
 ```
 
-Or, you can run it in uber-debuggery mode:
+或者你可以使用 debug 模式运行：
 
 ```sh
 npm_debug=1 sh install.sh
 ```
 
-### Even Fancier
+### 更高级
 
-Get the code with git.  Use `make` to build the docs and do other stuff.
-If you plan on hacking on npm, `make link` is your friend.
+使用 git 获取代码。使用 `make` 构建文档和其他东西。如果你打算修改 npm，`make link` 是你的朋
+友。
 
-If you've got the npm source code, you can also semi-permanently set
-arbitrary config keys using the `./configure --key=val ...`, and then
-run npm commands by doing `node bin/npm-cli.js <command> <args>`.  (This is helpful
-for testing, or running stuff without actually installing npm itself.)
+如果你已经获得 npm 源码，你也可以使用 `./configure --key=val ...` 设置任意非永久性的配置，
+然后通过 `node bin/npm-cli.js <command> <args>` 运行 npm 命令。这在测试或者运行东西但不
+需要实际安装 npm 时很有帮助。
 
-## Windows Install or Upgrade
+## 在 Windows 上安装或者升级
 
-Many improvements for Windows users have been made in npm 3 - you will have a better
-experience if you run a recent version of npm. To upgrade, either use [Microsoft's
-upgrade tool](https://github.com/felixrieseberg/npm-windows-upgrade),
-[download a new version of Node](https://nodejs.org/en/download/),
-or follow the Windows upgrade instructions in the
-[Installing/upgrading npm](https://npm.community/t/installing-upgrading-npm/251/2) post.
+针对 Windows 用户的许多改进已经被包含在 npm 3 中——如果你运行最近版本的 npm，将获得更好的体验。
+如果想要升级，可以使用
+[针对 Windows 的升级工具](https://github.com/felixrieseberg/npm-windows-upgrade) 
+或者参考 [安装/升级 npm](https://npm.community/t/installing-upgrading-npm/251/2)
+上的 Windows 升级说明。
 
-If that's not fancy enough for you, then you can fetch the code with
-git, and mess with it directly.
+如果这对你来说还不够高级，你也可以使用 git 获取代码，然后直接修改。
 
-## Installing on Cygwin
+## 在 Cygwin 上安装
 
-No.
+不支持。
 
-## Uninstalling
+## 卸载
 
-So sad to see you go.
+看到你要走很伤心。
 
 ```sh
 sudo npm uninstall npm -g
 ```
-Or, if that fails,
+
+如果失败，还可以运行：
 
 ```sh
 sudo make uninstall
 ```
 
-## More Severe Uninstalling
+## 更厉害的卸载
 
-Usually, the above instructions are sufficient.  That will remove
-npm, but leave behind anything you've installed.
+通常上面的说明已经足够了。它会移除 npm，但保留已经安装的东西。
 
-If you would like to remove all the packages that you have installed,
-then you can use the `npm ls` command to find them, and then `npm rm` to
-remove them.
+如果你想要移除所有已经安装的包，你可以先使用 `npm ls` 命令找到它们，然后使用 `npm rm` 移除。
 
-To remove cruft left behind by npm 0.x, you can use the included
-`clean-old.sh` script file.  You can run it conveniently like this:
+你可以使用 npm 中的 `clean-old.sh` 脚本来移除 npm 0.x 留下的碎片文件。可以很方便地运行，像这
+样：
 
 ```sh
 npm explore npm -g -- sh scripts/clean-old.sh
 ```
 
-npm uses two configuration files, one for per-user configs, and another
-for global (every-user) configs.  You can view them by doing:
+npm 使用了两个配置文件，一个针对单用户，另一个针对全局（每个用户）。你可以像这样查看它们：
 
 ```sh
-npm config get userconfig   # defaults to ~/.npmrc
-npm config get globalconfig # defaults to /usr/local/etc/npmrc
+npm config get userconfig   # 默认指向 ~/.npmrc
+npm config get globalconfig # 默认指向 /usr/local/etc/npmrc
 ```
 
-Uninstalling npm does not remove configuration files by default.  You
-must remove them yourself manually if you want them gone.  Note that
-this means that future npm installs will not remember the settings that
-you have chosen.
+卸载 npm 默认不会移除配置文件。如果你希望它们被删掉，必须自己手动移除。注意，这意味着在未来 npm
+安装时将无法记住你已经选择的设置。
 
-## More Docs
+## 更多文档
 
-Check out the [docs](https://docs.npmjs.com/).
+查看 [文档](https://docs.npmjs.com/)。
 
-You can use the `npm help` command to read any of them.
+你可以使用 `npm help` 命令阅读任意一份文档。
 
-If you're a developer, and you want to use npm to publish your program,
-you should [read this](https://docs.npmjs.com/misc/developers).
+如果你是一名开发者，想使用 npm 发布你的程序，你应该读
+[这个](https://docs.npmjs.com/misc/developers)。
 
-## BUGS
+## 缺陷
 
-When you find issues, please report them:
+当你发现问题时，请报告它们：
 
 * web:
   <https://npm.community/c/bugs>
 
-Be sure to include *all* of the output from the npm command that didn't work
-as expected.  The `npm-debug.log` file is also helpful to provide.
+一定要包含不按预期工作的 npm 命令的 *所有* 输出结果。提供 `npm-debug.log` 文件也是很有用的。
 
-You can also find npm people in `#npm` on https://package.community/ or
-[on Twitter](https://twitter.com/npm_support).  Whoever responds will no
-doubt tell you to put the output in a gist or email.
+你也可以在 https://package.community/ 或者
+[Twitter](https://twitter.com/npm_support) 上通过 `#npm` 话题找到 npm 的人。回应
+的人很可能会告诉你通过 gist 或者电子邮件给出输出结果。
 
-## SEE ALSO
+## 参见
 
 * npm(1)
 * npm-help(1)

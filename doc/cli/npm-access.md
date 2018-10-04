@@ -48,7 +48,7 @@ npm-access(1) -- 设置已发布的包的访问级别
 * 你是拥有限定范围的团队的成员。
 * 你已经被赋予一个包的可读写权限，无论是作为团队的成员还是直接是所有者。
 
-如果你启用了两部认证（two-factor authentication），当访问级别变更时必须使用 `--otp`
+如果你启用了两步认证（two-factor authentication），当访问级别变更时必须使用 `--otp`
 传入一次性密码（OPT, One-time Password）。
 
 如果你的账户是未付费的，尝试发布限定范围的包将会失败，返回 HTTP 402

@@ -13,7 +13,7 @@ npm(1) -- JavaScript 包管理器
 
 **你需要 Node v6 或者更高的版本来运行该程序。**
 
-要安装可以运行在 Node v5 和之前版本上的 **不支持的** 旧版 npm，请克隆该 git
+要安装可以运行在 Node v5 和之前版本上的 **不受支持的** 旧版 npm，请克隆该 git
 仓库，查找旧的标签和分支。
 
 npm 默认被配置为使用 npm 股份有限公司的公共 registry https://registry.npmjs.org 。

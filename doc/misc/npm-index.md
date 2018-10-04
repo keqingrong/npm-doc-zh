@@ -19,7 +19,7 @@ JavaScript 包管理器
 
 ### npm-adduser(1)
 
-增加一个注册用户账号
+增加一个 registry 用户账号
 
 ### npm-audit(1)
 

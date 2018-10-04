@@ -1,81 +1,76 @@
-npm-adduser(1) -- Add a registry user account
+npm-adduser(1) -- 增加一个 registry 用户账号
 =============================================
 
-## SYNOPSIS
+## 概述
 
     npm adduser [--registry=url] [--scope=@orgname] [--always-auth] [--auth-type=legacy]
 
-    aliases: login, add-user
+    别名: login, add-user
 
-## DESCRIPTION
+## 描述
 
-Create or verify a user named `<username>` in the specified registry, and
-save the credentials to the `.npmrc` file. If no registry is specified,
-the default registry will be used (see `npm-config(7)`).
+在指定 registry 中创建或者验证名为 `<username>` 的用户，将证书保存到 `.npmrc` 文件中。
+如果没有指定 registry，将会使用默认的 registry，见 `npm-config(7)`。
 
-The username, password, and email are read in from prompts.
+用户名、密码和电子邮件都会从提示符（prompt）读取。
 
-To reset your password, go to <https://www.npmjs.com/forgot>
+要重置密码，访问 <https://www.npmjs.com/forgot>。
 
-To change your email address, go to <https://www.npmjs.com/email-edit>
+要修改电子邮件地址，访问 <https://www.npmjs.com/email-edit>。
 
-You may use this command multiple times with the same user account to
-authorize on a new machine.  When authenticating on a new machine,
-the username, password and email address must all match with
-your existing record.
+你可能会多次使用这个命令和相同的用户账号授权新的机器。
+授权一台新机器时，用户名、密码和电子邮件地址都必须匹配现有记录。
 
-`npm login` is an alias to `adduser` and behaves exactly the same way.
+`npm login` 是 `npm adduser` 的别名，行为完全一致。
 
-## CONFIGURATION
+## 配置
 
 ### registry
 
-Default: https://registry.npmjs.org/
+默认值: `https://registry.npmjs.org/`
 
-The base URL of the npm package registry. If `scope` is also specified,
-this registry will only be used for packages with that scope. `scope` defaults
-to the scope of the project directory you're currently in, if any. See `npm-scope(7)`.
+npm 包 registry 的基础 URL。如果指定了 `scope`，该 registry 将只会用于使用该 `scope`
+的包。如果有的话，`scope` 默认是你当前所在项目目录的 `scope`。参见 `npm-scope(7)`。
 
 ### scope
 
-Default: none
+默认值: 无
 
-If specified, the user and login credentials given will be associated
-with the specified scope. See `npm-scope(7)`. You can use both at the same time,
-e.g.
+如果指定，那么用户和登录证书将会关联到该 `scope`。参见 `npm-scope(7)`。你可以同时使用，例如：
 
-    npm adduser --registry=http://myregistry.example.com --scope=@myco
+```sh
+npm adduser --registry=http://myregistry.example.com --scope=@myco
+```
 
-This will set a registry for the given scope and login or create a user for
-that registry at the same time.
+这会为给定的 `scope` 设置一个 registry，并且同时针对该 registry 登录或者创建一个用户。
 
 ### always-auth
 
-Default: false
+默认值: `false`
 
-If specified, save configuration indicating that all requests to the given
-registry should include authorization information. Useful for private
-registries. Can be used with `--registry` and / or `--scope`, e.g.
+如果指定，会保存该配置，指明所有到给定 registry 的请求都应该包含认证信息。对私有 registry
+很有用。可以和 `--registry` 及 / 或 `--scope` 一起使用，例如：
 
-    npm adduser --registry=http://private-registry.example.com --always-auth
+```sh
+npm adduser --registry=http://private-registry.example.com --always-auth
+```
 
-This will ensure that all requests to that registry (including for tarballs)
-include an authorization header. This setting may be necessary for use with
-private registries where metadata and package tarballs are stored on hosts with
-different hostnames. See `always-auth` in `npm-config(7)` for more details on
-always-auth. Registry-specific configuration of `always-auth` takes precedence
-over any global configuration.
+这将确保所有到 registry 的请求（包括 tarball）都包含认证头。该设置对使用私有 registry
+（元数据和包的压缩包存储在有不同的主机名的主机上）来说可能是必要的。`always-auth`
+的更多细节，参见 `npm-config(7)` 中的 `always-auth`。`always-auth`
+的指定 registry 配置（registry-specific configuration）优先于任何全局配置。
 
 ### auth-type
 
-* Default: `'legacy'`
-* Type: `'legacy'`, `'sso'`, `'saml'`, `'oauth'`
+* 默认值: `'legacy'`
+* 类型: `'legacy'`, `'sso'`, `'saml'`, `'oauth'`
 
-What authentication strategy to use with `adduser`/`login`. Some npm registries
-(for example, npmE) might support alternative auth strategies besides classic
-username/password entry in legacy npm.
+和 `adduser`/`login` 一起使用的身份认证策略。一些 npm registry（例如 npmE），除了传统 npm
+中经典的用户名/密码，可能还支持另外的身份认证策略。
 
-## SEE ALSO
+译者注：npmE 即 [npm Enterprise](https://www.npm-enterprise.com/)。
+
+## 参见
 
 * npm-registry(7)
 * npm-config(1)

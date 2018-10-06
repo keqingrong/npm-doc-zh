@@ -9,7 +9,7 @@
 * [npm](doc/cli/npm.md) 🎉
 * [npm access](doc/cli/npm-access.md) 🎉
 * [npm adduser](doc/cli/npm-adduser.md) (aliases: `npm login`, `npm add-user`) 🎉
-* [npm audit](doc/cli/npm-audit.md)
+* [npm audit](doc/cli/npm-audit.md) 🎉
 * [npm bin](doc/cli/npm-bin.md) 🎉
 * [npm bugs](doc/cli/npm-bugs.md) (alias: `npm issues`) 🎉
 * [npm build](doc/cli/npm-build.md) 🎉

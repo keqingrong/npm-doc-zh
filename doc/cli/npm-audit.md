@@ -1,105 +1,101 @@
-npm-audit(1) -- Run a security audit
+npm-audit(1) -- 运行安全审计
 ====================================
 
-## SYNOPSIS
+## 概述
 
     npm audit [--json|--parseable]
     npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=dev]
 
-## EXAMPLES
+## 示例
 
-Scan your project for vulnerabilities and automatically install any compatible
-updates to vulnerable dependencies:
-```
+扫描项目漏洞，为易受攻击的依赖自动安装兼容更新。
+
+```sh
 $ npm audit fix
 ```
 
-Run `audit fix` without modifying `node_modules`, but still updating the
-pkglock:
-```
+运行 `audit fix` ，但不修改 `node_modules`，只更新锁文件：
+
+```sh
 $ npm audit fix --package-lock-only
 ```
 
-Skip updating `devDependencies`:
-```
+跳过更新 `devDependencies`：
+
+```sh
 $ npm audit fix --only=prod
 ```
 
-Have `audit fix` install semver-major updates to toplevel dependencies, not just
-semver-compatible ones:
-```
+使用 `audit fix` 将语义化版本主版本更新安装为顶级依赖，不仅仅是兼容的语义化版本：
+
+```sh
 $ npm audit fix --force
 ```
 
-Do a dry run to get an idea of what `audit fix` will do, and _also_ output
-install information in JSON format:
-```
+进行空运行（dry run），从而了解 `audit fix` 会做什么，*也* 支持以 JSON 格式输出安装信息：
+
+```sh
 $ npm audit fix --dry-run --json
 ```
 
-Scan your project for vulnerabilities and just show the details, without fixing
-anything:
-```
+扫描项目漏洞，仅显示细节，不会进行修复：
+
+```sh
 $ npm audit
 ```
 
-Get the detailed audit report in JSON format:
-```
+使用 JSON 格式显示详细的审计报告：
+
+```sh
 $ npm audit --json
 ```
 
-Get the detailed audit report in plain text result, separated by tab characters, allowing for
-future reuse in scripting or command line post processing, like for example, selecting
-some of the columns printed:
-```
+使用纯文本格式展示详细的审计报告，用制表符分隔，允许未来在脚本或者命令行后处理中复用，
+例如选择打印某些列：
+
+```sh
 $ npm audit --parseable
 ```
 
-To parse columns, you can use for example `awk`, and just print some of them:
-```
+如果要解析列，你可以使用像 `awk` 这样的工具，仅打印其中的一部分：
+
+```sh
 $ npm audit --parseable | awk -F $'\t' '{print $1,$4}'
 ```
 
-## DESCRIPTION
+## 描述
 
-The audit command submits a description of the dependencies configured in
-your project to your default registry and asks for a report of known
-vulnerabilities. The report returned includes instructions on how to act on
-this information.
+`audit` 命令会提交依赖（项目配置的）描述到默认的 registry，请求一份已知漏洞的报告。
+该报告返回内容包含根据该信息如何采取行动的说明。
 
-You can also have npm automatically fix the vulnerabilities by running `npm
-audit fix`. Note that some vulnerabilities cannot be fixed automatically and
-will require manual intervention or review. Also note that since `npm audit fix`
-runs a full-fledged `npm install` under the hood, all configs that apply to the
-installer will also apply to `npm install` -- so things like `npm audit fix
---package-lock-only` will work as expected.
+你也可以通过运行 `npm audit fix` 让 npm 自动修复漏洞。注意，一些漏洞不能被自动修复，需要手动
+干预或者评审。同样需要注意的是，由于 `npm audit fix` 会在底层运行 `npm install`，所有应用到
+安装器的配置也会应用到 `npm install`——所以 `npm audit fix --package-lock-only` 会按预
+期工作。
 
-## CONTENT SUBMITTED
+## 内容提交
 
-* npm_version
-* node_version
-* platform
-* node_env
-* A scrubbed version of your package-lock.json or npm-shrinkwrap.json
+* npm 版本（npm_version）
+* Node 版本（node_version）
+* 平台（platform）
+* Node 环境变量（node_env）
+* 从你的 package-lock.json 或 npm-shrinkwrap.json 中清洗出来的版本
 
-### SCRUBBING
+### 清洗
 
-In order to ensure that potentially sensitive information is not included in
-the audit data bundle, some dependencies may have their names (and sometimes
-versions) replaced with opaque non-reversible identifiers.  It is done for
-the following dependency types:
+为了确保潜在的敏感信息不会被包含在审计数据包中，一些依赖的名称（有时候是版本）可能会被替换为不透明
+不可逆的标识符。这样做是为了以下依赖类型：
 
-* Any module referencing a scope that is configured for a non-default
-  registry has its name scrubbed.  (That is, a scope you did a `npm login --scope=@ourscope` for.)
-* All git dependencies have their names and specifiers scrubbed.
-* All remote tarball dependencies have their names and specifiers scrubbed.
-* All local directory and tarball dependencies have their names and specifiers scrubbed.
+* 任何引用限定范围（scope）的模块（被配置为非默认 registry），名称会被清洗。换言之，限定范围
+（scope）对 `npm login --scope=@ourscope` 有效。
+* 所有的 git 依赖，名称和说明符会被清洗。
+* 所有的远程压缩包依赖，名称和说明符会被清洗。
+* 所有的本地目录和压缩包依赖，名称和说明符会被清洗。
 
-The non-reversible identifiers are a sha256 of a session-specific UUID and the
-value being replaced, ensuring a consistent value within the payload that is
-different between runs.
+不可逆的标识符是会话特定的 UUID 和被替换值的 sha256 值，确保不同运行时的载荷（payload）是一致
+的值。
 
-## SEE ALSO
+## 参见
 
 * npm-install(1)
 * package-locks(5)

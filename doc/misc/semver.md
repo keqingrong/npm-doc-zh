@@ -1,15 +1,15 @@
-semver(7) -- The semantic versioner for npm
+semver(7) -- npm 使用的语义化版本
 ===========================================
 
-## Install
+## Install（安装）
 
-```bash
+```sh
 npm install --save semver
-````
+```
 
-## Usage
+## Usage（用法）
 
-As a node module:
+作为 Node 模块:
 
 ```js
 const semver = require('semver')
@@ -24,9 +24,9 @@ semver.valid(semver.coerce('v2')) // '2.0.0'
 semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
 ```
 
-As a command-line utility:
+作为命令行实用程序:
 
-```
+```sh
 $ semver -h
 
 SemVer 5.3.0
@@ -67,27 +67,23 @@ Versions are printed in ascending order, so supplying
 multiple versions to the utility will just sort them.
 ```
 
-## Versions
+## Versions（版本）
 
-A "version" is described by the `v2.0.0` specification found at
-<http://semver.org/>.
+<http://semver.org/> 上的 `v2.0.0` 规范描述了 `version` 相关信息。
 
-A leading `"="` or `"v"` character is stripped off and ignored.
+前面的 `"="` 或者 `"v"` 字符会被去除和忽略。
 
-## Ranges
+## Ranges（范围）
 
-A `version range` is a set of `comparators` which specify versions
-that satisfy the range.
+`version range` 是一组 `comparator`，指定满足该范围的版本。
 
-A `comparator` is composed of an `operator` and a `version`.  The set
-of primitive `operators` is:
+`comparator` 由一个 `operator` 和一个 `version` 组成。一组基本的 `operator` 包含：
 
-* `<` Less than
-* `<=` Less than or equal to
-* `>` Greater than
-* `>=` Greater than or equal to
-* `=` Equal.  If no operator is specified, then equality is assumed,
-  so this operator is optional, but MAY be included.
+* `<` 小于
+* `<=` 小于等于
+* `>` 大于
+* `>=` 大于等于
+* `=` 等于。如果没有指定操作符，假定为相等，所以该操作符是可选的，但是可能被包括。
 
 For example, the comparator `>=1.2.7` would match the versions
 `1.2.7`, `1.2.8`, `2.5.3`, and `1.3.9`, but not the versions `1.2.6`
@@ -108,7 +104,7 @@ or `1.1.0`.
 The range `1.2.7 || >=1.2.9 <2.0.0` would match the versions `1.2.7`,
 `1.2.9`, and `1.4.6`, but not the versions `1.2.8` or `2.0.0`.
 
-### Prerelease Tags
+### Prerelease Tags（预发行标签）
 
 If a version has a prerelease tag (for example, `1.2.3-alpha.3`) then
 it will only be allowed to satisfy comparator sets if at least one
@@ -136,7 +132,7 @@ the user is indicating that they are aware of the risk.  However, it
 is still not appropriate to assume that they have opted into taking a
 similar risk on the *next* set of prerelease versions.
 
-#### Prerelease Identifiers
+#### Prerelease Identifiers（预发行标识符）
 
 The method `.inc` takes an additional `identifier` string argument that
 will append the value of the string as a prerelease identifier:
@@ -160,7 +156,7 @@ $ semver 1.2.4-beta.0 -i prerelease
 1.2.4-beta.1
 ```
 
-### Advanced Range Syntax
+### Advanced Range Syntax（高级范围语法）
 
 Advanced range syntax desugars to primitive comparators in
 deterministic ways.
@@ -168,7 +164,7 @@ deterministic ways.
 Advanced ranges may be combined in the same way as primitive
 comparators using white space or `||`.
 
-#### Hyphen Ranges `X.Y.Z - A.B.C`
+#### Hyphen Ranges（连字符范围） `X.Y.Z - A.B.C`
 
 Specifies an inclusive set.
 
@@ -203,7 +199,7 @@ character is in fact optional.
 * `1` := `1.x.x` := `>=1.0.0 <2.0.0`
 * `1.2` := `1.2.x` := `>=1.2.0 <1.3.0`
 
-#### Tilde Ranges `~1.2.3` `~1.2` `~1`
+#### Tilde Ranges（波浪符范围） `~1.2.3` `~1.2` `~1`
 
 Allows patch-level changes if a minor version is specified on the
 comparator.  Allows minor-level changes if not.
@@ -220,7 +216,7 @@ comparator.  Allows minor-level changes if not.
   `1.2.4-beta.2` would not, because it is a prerelease of a
   different `[major, minor, patch]` tuple.
 
-#### Caret Ranges `^1.2.3` `^0.2.5` `^0.0.4`
+#### Caret Ranges（脱字符范围） `^1.2.3` `^0.2.5` `^0.0.4`
 
 Allows changes that do not modify the left-most non-zero digit in the
 `[major, minor, patch]` tuple.  In other words, this allows patch and
@@ -263,7 +259,7 @@ zero.
 * `^1.x` := `>=1.0.0 <2.0.0`
 * `^0.x` := `>=0.0.0 <1.0.0`
 
-### Range Grammar
+### Range Grammar（范围语法）
 
 Putting all this together, here is a Backus-Naur grammar for ranges,
 for the benefit of parser authors:
@@ -287,7 +283,7 @@ parts      ::= part ( '.' part ) *
 part       ::= nr | [-0-9A-Za-z]+
 ```
 
-## Functions
+## Functions（函数）
 
 All methods and classes take a final `loose` boolean argument that, if
 true, will be more forgiving about not-quite-valid semver strings.
@@ -315,7 +311,7 @@ strings that they parse.
 * `intersects(r1, r2, loose)`: Return true if the two supplied ranges
   or comparators intersect.
 
-### Comparison
+### Comparison（比较）
 
 * `gt(v1, v2)`: `v1 > v2`
 * `gte(v1, v2)`: `v1 >= v2`
@@ -337,11 +333,11 @@ strings that they parse.
   (`major`, `premajor`, `minor`, `preminor`, `patch`, `prepatch`, or `prerelease`),
   or null if the versions are the same.
 
-### Comparators
+### Comparators（比较器）
 
 * `intersects(comparator)`: Return true if the comparators intersect
 
-### Ranges
+### Ranges（范围）
 
 * `validRange(range)`: Return the valid range or null if it's not valid
 * `satisfies(version, range)`: Return true if the version satisfies the
@@ -371,7 +367,7 @@ satisfy the range.
 If you want to know if a version satisfies or does not satisfy a
 range, use the `satisfies(version, range)` function.
 
-### Coercion
+### Coercion（强制转换）
 
 * `coerce(version)`: Coerces a string to semver if possible
 

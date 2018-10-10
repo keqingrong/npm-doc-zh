@@ -65,6 +65,7 @@
 * [npm version](doc/cli/npm-version.md)
 * [npm view](doc/cli/npm-view.md) (aliases: `npm info`, `npm show`, `npm v`)
 * [npm whoami](doc/cli/npm-whoami.md) 🎉
+* [npx](doc/cli/npx.md)
 
 ## files
 

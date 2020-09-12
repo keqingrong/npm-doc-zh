@@ -75,9 +75,10 @@ multiple versions to the utility will just sort them.
 
 ## Ranges（范围）
 
-`version range` 是一组 `comparator`，指定满足该范围的版本。
+`version range` 是一组 `comparator`（比较器），指定满足该范围的版本。
 
-`comparator` 由一个 `operator` 和一个 `version` 组成。一组基本的 `operator` 包含：
+`comparator` 由一个 `operator`（操作符）和一个 `version` 组成。一组基本的 `operator`
+包含：
 
 * `<` 小于
 * `<=` 小于等于
@@ -85,13 +86,17 @@ multiple versions to the utility will just sort them.
 * `>=` 大于等于
 * `=` 等于。如果没有指定操作符，假定为相等，所以该操作符是可选的，但是可能被包括。
 
-For example, the comparator `>=1.2.7` would match the versions
-`1.2.7`, `1.2.8`, `2.5.3`, and `1.3.9`, but not the versions `1.2.6`
-or `1.1.0`.
+例如，比较器 `>=1.2.7` 匹配 `1.2.7`、`1.2.8`、`2.5.3` 和 `1.3.9`，但不匹配 `1.2.6`
+或者 `1.1.0`。
 
-Comparators can be joined by whitespace to form a `comparator set`,
-which is satisfied by the **intersection** of all of the comparators
-it includes.
+比较器可以通过空格联结，构成 `comparator set`（比较器集合），最终版本为满足所有包含的比较器的
+**交集**。
+
+范围（range）由一个或多个比较器集合通过 `||` 联结组成。一个版本匹配一个范围，
+当且仅当每个比较器 至少 由 `||` 分隔的比较器集合之一
+
+
+
 
 A range is composed of one or more comparator sets, joined by `||`.  A
 version matches a range if and only if every comparator in at least
@@ -217,6 +222,12 @@ comparator.  Allows minor-level changes if not.
   different `[major, minor, patch]` tuple.
 
 #### Caret Ranges（脱字符范围） `^1.2.3` `^0.2.5` `^0.0.4`
+
+只允许那些不修改`[major, minor, patch]` 元组中最左边非零数字的更改。
+换句话说，对于 `1.0.0` 及以上版本，只允许主版本和次版本更新；对于 `0.X >=0.1.0`
+的版本，只允许补丁更新；对于 `0.0.X` 版本，不会更新。
+
+许多作者把 `0.x` 版本看作是
 
 Allows changes that do not modify the left-most non-zero digit in the
 `[major, minor, patch]` tuple.  In other words, this allows patch and
